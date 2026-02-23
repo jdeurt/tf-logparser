@@ -29,6 +29,6 @@ for (const file of fixtures) {
   const linesPerSec = Math.round(lines / (median / 1000));
 
   console.log(
-    `| ${file.padEnd(14)} | ${String(sizeKB + " KB").padStart(8)} | ${String(lines).padStart(6)} | ${median.toFixed(1).padStart(8)} ms | ${linesPerSec.toLocaleString().padStart(10)} |`,
+    `| ${file.padEnd(14)} | ${(sizeKB + " KB").padStart(8)} | ${String(lines).padStart(6)} | ${median.toFixed(1).padStart(8)} ms | ${linesPerSec.toLocaleString().padStart(10)} |`,
   );
 }
