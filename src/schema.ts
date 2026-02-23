@@ -760,12 +760,7 @@ const metaSchema = eventSchema<MetaEvent>(
     label: { type: T },
     kvs: {
       type: "object" as const,
-      additionalProperties: {
-        oneOf: [
-          { type: "array" as const, items: { type: T } },
-          { type: "boolean" as const, const: true },
-        ],
-      },
+      additionalProperties: { type: T },
     },
   },
   ["label", "kvs"],

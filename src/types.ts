@@ -436,7 +436,7 @@ export interface IntermissionWinLimitEvent extends BaseEvent {
 export interface MetaEvent extends BaseEvent {
   type: "meta";
   label: string;
-  kvs: Record<string, string[] | true>;
+  kvs: Record<string, string>;
 }
 
 export interface UnknownEvent extends BaseEvent {

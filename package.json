@@ -1,6 +1,6 @@
 {
   "name": "tf-logparser",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -23,6 +23,7 @@
     "lint": "eslint src/",
     "format": "prettier --write src/",
     "stringify-log": "npm run build:parser && tsx scripts/stringify-log.ts",
+    "benchmark": "npm run build:parser && tsx scripts/benchmark.ts",
     "prepublishOnly": "npm run build"
   },
   "keywords": [],
