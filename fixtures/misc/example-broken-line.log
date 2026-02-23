@@ -1,0 +1,9 @@
+L 02/23/2026 - 06:12:01: World triggered "Round_Start"
+L 02/23/2026 - 06:12:02: "Frank<52><[U:1:156276611]><Red>" changed role to "scout"
+L 02/23/2026 - 06:12:03: "Frank<52><[U:1:156276611]><Red>" triggered "damage" against "tributary<53><[U:1:36036078]><Blue>" (damage "100") (weapon "scattergun")
+L 02/23/2026 - 06:12:04: "Frank<52><[U:1:156276611]><Red>" killed "tributary<53><[U:1:36036078]><Blue>" with "scattergun" (attacker_position "220 -605 -223") (victim_position "105 -573 -223")
+L 02/23/2026 - 06:12:05: Printing for client: 11
+L 02/23/2026 - 06:12:06: World triggered "Round_Win" (winner "Red")
+L 02/23/2026 - 06:12:07: World triggered "Round_Length" (seconds "305.10")
+L 02/23/2026 - 06:12:08: Team "Red" current score "2" with "6" players
+L 02/23/2026 - 06:12:09: Team "Blue" current score "1" with "6" players

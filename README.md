@@ -210,6 +210,12 @@ The parser is tested against real log fixtures for:
 - Passtime
 - Ultiduo
 
+> **Note:** This project targets the TF2 log format from 2025 onward and does not aim to support older log formats.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add or fix event parsers, including how to add test fixtures for lines that break the parser.
+
 ## Development
 
 ```bash
