@@ -16,3 +16,9 @@ export function parseLog(rawText: string): TfLogEvent[] {
     }
   });
 }
+
+export function combineLogs(logs: string[]): string {
+  const ts = "01/01/0001 - 00:00:00";
+  const sentinel = `L ${ts}: # COMBINED_LOG`;
+  return logs.map((log) => log.trim()).join(`\n${sentinel}\n`);
+}
