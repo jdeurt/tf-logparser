@@ -70,7 +70,7 @@ import type {
   UnknownEvent,
 } from "./types.js";
 
-const ajv = new Ajv.default({ discriminator: true });
+const ajv = new Ajv({ discriminator: true });
 
 // ─── Shared definitions ──────────────────────────────────
 
