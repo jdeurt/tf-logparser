@@ -73,6 +73,7 @@ Event
   / PasstimeBallDamageEvent
   / PanaceaCheckEvent
   / PrintingForClientEvent
+  / MetaEvent
   / UnknownEvent
 
 // ─── Player triggered events ──────────────────────────────
@@ -415,6 +416,25 @@ PanaceaCheckEvent
 PrintingForClientEvent
   = "Printing for client: " client:$[0-9]+
     { return { type: "printingForClient", client: int(client) }; }
+
+// ─── Meta events (post-processing artifacts) ─────────────
+
+MetaEvent
+  = "# " label:$[A-Z0-9_]+ kvs:MetaKVs
+    { return { type: "meta", label, kvs }; }
+
+MetaKVs
+  = pairs:MetaKV* { return kvs(pairs); }
+
+MetaKV
+  = " (" key:$[a-z_0-9]+ values:MetaValues ")"
+    { return [key, values.length > 0 ? values : true]; }
+
+MetaValues
+  = values:MetaValue* { return values; }
+
+MetaValue
+  = " \"" value:$[^\"]* "\"" { return value; }
 
 // ─── Fallback ─────────────────────────────────────────────
 

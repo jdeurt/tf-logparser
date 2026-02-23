@@ -12,11 +12,12 @@
   },
   "sideEffects": false,
   "files": [
-    "dist"
+    "dist",
+    "!dist/analysis"
   ],
   "scripts": {
     "build:parser": "peggy -o src/generated/tf2-parser.js --format es src/tf2.peggy",
-    "build": "npm run build:parser && tsc",
+    "build": "npm run build:parser && tsc && mkdir -p dist/generated && cp src/generated/tf2-parser.js dist/generated/tf2-parser.js",
     "test": "npm run build:parser && vitest run",
     "test:watch": "vitest",
     "lint": "eslint src/",

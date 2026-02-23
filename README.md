@@ -167,6 +167,18 @@ The parser recognizes the following events. Any line that doesn't match a known 
 | `passtimeBallDamage` | Ball took damage. |
 | `panaceaCheck` | Panacea check event. |
 
+#### Meta
+
+Meta lines are post-processing artifacts added by external tools. They use the standard timestamp prefix (typically all zeros) with the format:
+
+```
+L 00/00/0000 - 00:00:00: # <LABEL> [(key "value1" "value2") (flag)]
+```
+
+| Type | Description |
+|---|---|
+| `meta` | Meta line with a label and optional key-value pairs. `kvs` is a `Record<string, string[] \| true>` where flags (no values) are `true`. |
+
 #### System
 
 | Type | Description |

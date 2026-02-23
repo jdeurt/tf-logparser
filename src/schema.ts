@@ -2,6 +2,7 @@ import Ajv, { type JSONSchemaType } from "ajv";
 import type {
   BaseEvent,
   CaptureBlockedEvent,
+  MetaEvent,
   CatapultEvent,
   ChangedNameEvent,
   ChangedRoleEvent,
@@ -751,6 +752,25 @@ const chargedMFilterSchema = eventSchema<ChargedMFilterEvent>(
   ["player", "role"],
 );
 
+// ─── Meta ────────────────────────────────────────────────
+
+const metaSchema = eventSchema<MetaEvent>(
+  "meta",
+  {
+    label: { type: T },
+    kvs: {
+      type: "object" as const,
+      additionalProperties: {
+        oneOf: [
+          { type: "array" as const, items: { type: T } },
+          { type: "boolean" as const, const: true },
+        ],
+      },
+    },
+  },
+  ["label", "kvs"],
+);
+
 // ─── Fallback ────────────────────────────────────────────
 
 const unknownSchema = eventSchema<UnknownEvent>(
@@ -831,6 +851,7 @@ const tfLogEventSchema = {
     chargedMFilterSchema,
     changedNameSchema,
     intermissionWinLimitSchema,
+    metaSchema,
     unknownSchema,
   ],
 };

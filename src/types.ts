@@ -433,6 +433,12 @@ export interface IntermissionWinLimitEvent extends BaseEvent {
   team: string;
 }
 
+export interface MetaEvent extends BaseEvent {
+  type: "meta";
+  label: string;
+  kvs: Record<string, string[] | true>;
+}
+
 export interface UnknownEvent extends BaseEvent {
   type: "unknown";
   body: string;
@@ -503,4 +509,5 @@ export type TfLogEvent =
   | ChargedMFilterEvent
   | ChangedNameEvent
   | IntermissionWinLimitEvent
+  | MetaEvent
   | UnknownEvent;
