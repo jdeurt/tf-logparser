@@ -5,8 +5,8 @@ export interface Player {
   team: string;
 }
 
-interface BaseEvent {
-  timestamp: Date;
+export interface BaseEvent {
+  timestamp: number;
   raw: string;
 }
 

@@ -9,7 +9,7 @@ export function parseLog(rawText: string): TfLogEvent[] {
     } catch {
       return {
         type: "unknown" as const,
-        timestamp: new Date(),
+        timestamp: Date.now(),
         raw: line,
         body: line,
       };

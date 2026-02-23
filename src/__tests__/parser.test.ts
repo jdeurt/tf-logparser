@@ -45,7 +45,7 @@ describe.each([
 
   it("every event has a timestamp and raw field", () => {
     for (const event of events) {
-      expect(event.timestamp).toBeInstanceOf(Date);
+      expect(typeof event.timestamp).toBe("number");
       expect(typeof event.raw).toBe("string");
       expect(event.raw.length).toBeGreaterThan(0);
     }

@@ -1,5 +1,7 @@
 {{
-// Per-parse initializer — has access to `input` and `options`
+function int(s) { return parseInt(s, 10); }
+function float(s) { return parseFloat(s); }
+function kvs(pairs) { const o = {}; for (const [k, v] of pairs) o[k] = v; return o; }
 }}
 
 Line
@@ -11,16 +13,7 @@ Line
 Timestamp
   = "L " month:$([0-9][0-9]) "/" day:$([0-9][0-9]) "/" year:$([0-9][0-9][0-9][0-9])
     " - " hour:$([0-9][0-9]) ":" min:$([0-9][0-9]) ":" sec:$([0-9][0-9]) ":"
-    {
-      return new Date(
-        parseInt(year, 10),
-        parseInt(month, 10) - 1,
-        parseInt(day, 10),
-        parseInt(hour, 10),
-        parseInt(min, 10),
-        parseInt(sec, 10)
-      );
-    }
+    { return new Date(int(year), int(month) - 1, int(day), int(hour), int(min), int(sec)).getTime(); }
 
 // ─── Events (ordered alternatives) ────────────────────────
 
@@ -36,14 +29,10 @@ Event
   / ChargeEndedEvent
   / FirstHealAfterSpawnEvent
   / KillAssistEvent
-  / DominationEvent
-  / RevengeEvent
+  / DomRevEvent
   / CaptureBlockedEvent
-  / PlayerBuiltObjectEvent
+  / ObjectActionEvent
   / KilledObjectEvent
-  / ObjectDetonatedEvent
-  / PlayerCarryObjectEvent
-  / PlayerDropObjectEvent
   / PlayerExtinguishedEvent
   / LostUberAdvantageEvent
   / MatchPauseEvent
@@ -73,18 +62,12 @@ Event
   / EnteredGameEvent
   / PointCapturedEvent
   / IntermissionWinLimitEvent
-  / RoundStartEvent
-  / RoundSetupBeginEvent
-  / RoundSetupEndEvent
+  / SimpleWorldEvent
   / RoundWinEvent
   / RoundLengthEvent
-  / RoundOvertimeEvent
   / GameOverEvent
-  / GamePausedEvent
-  / GameUnpausedEvent
   / PauseLengthEvent
-  / CurrentScoreEvent
-  / FinalScoreEvent
+  / ScoreEvent
   / DemosTfEvent
   / PasstimeBallSpawnedEvent
   / PasstimeBallDamageEvent
@@ -95,60 +78,34 @@ Event
 // ─── Player triggered events ──────────────────────────────
 
 DamageEvent
-  = player:Player " triggered \"damage\" against " victim:Player " " kvs:DamageKVs
+  = player:Player " triggered \"damage\" against " victim:Player " " kvs:KVs
     {
-      const result = { type: "damage", player, victim, damage: kvs.damage, weapon: kvs.weapon };
-      if (kvs.realdamage !== undefined) result.realdamage = kvs.realdamage;
+      const result = { type: "damage", player, victim, damage: int(kvs.damage), weapon: kvs.weapon };
+      if (kvs.realdamage !== undefined) result.realdamage = int(kvs.realdamage);
       if (kvs.crit !== undefined) result.crit = kvs.crit;
       if (kvs.headshot !== undefined) result.headshot = true;
       if (kvs.airshot !== undefined) result.airshot = true;
-      if (kvs.height !== undefined) result.height = kvs.height;
-      if (kvs.healing !== undefined) result.healing = kvs.healing;
+      if (kvs.height !== undefined) result.height = int(kvs.height);
+      if (kvs.healing !== undefined) result.healing = int(kvs.healing);
       return result;
     }
-
-DamageKVs
-  = pairs:DamageKV+
-    {
-      const obj = {};
-      for (const [k, v] of pairs) obj[k] = v;
-      return obj;
-    }
-
-DamageKV
-  = "(damage \"" v:$[0-9]+ "\")" _? { return ["damage", parseInt(v, 10)]; }
-  / "(realdamage \"" v:$[0-9]+ "\")" _? { return ["realdamage", parseInt(v, 10)]; }
-  / "(weapon \"" v:$[^\"]+ "\")" _? { return ["weapon", v]; }
-  / "(crit \"" v:$("crit" / "mini") "\")" _? { return ["crit", v]; }
-  / "(headshot \"1\")" _? { return ["headshot", true]; }
-  / "(airshot \"1\")" _? { return ["airshot", true]; }
-  / "(height \"" v:$[0-9]+ "\")" _? { return ["height", parseInt(v, 10)]; }
-  / "(healing \"" v:$[0-9]+ "\")" _? { return ["healing", parseInt(v, 10)]; }
 
 MedicDeathEvent
   = player:Player " triggered \"medic_death\" against " victim:Player
     " (healing \"" healing:$[0-9]+ "\") (ubercharge \"" ubercharge:$[0-9]+ "\")"
-    {
-      return {
-        type: "medicDeath",
-        player,
-        victim,
-        healing: parseInt(healing, 10),
-        ubercharge: parseInt(ubercharge, 10)
-      };
-    }
+    { return { type: "medicDeath", player, victim, healing: int(healing), ubercharge: int(ubercharge) }; }
 
 HealedEvent
   = player:Player " triggered \"healed\" against " target:Player " (healing \"" healing:$[0-9]+ "\")" rest:HealedOptionals
     {
-      const result = { type: "healed", player, target, healing: parseInt(healing, 10) };
+      const result = { type: "healed", player, target, healing: int(healing) };
       if (rest.airshot) result.airshot = true;
       if (rest.height !== undefined) result.height = rest.height;
       return result;
     }
 
 HealedOptionals
-  = " (airshot \"1\") (height \"" h:$[0-9]+ "\")" { return { airshot: true, height: parseInt(h, 10) }; }
+  = " (airshot \"1\") (height \"" h:$[0-9]+ "\")" { return { airshot: true, height: int(h) }; }
   / "" { return {}; }
 
 ShotFiredEvent
@@ -173,11 +130,11 @@ ChargeDeployedEvent
 
 ChargeEndedEvent
   = player:Player " triggered \"chargeended\" (duration \"" duration:$[0-9.]+ "\")"
-    { return { type: "chargeEnded", player, duration: parseFloat(duration) }; }
+    { return { type: "chargeEnded", player, duration: float(duration) }; }
 
 FirstHealAfterSpawnEvent
   = player:Player " triggered \"first_heal_after_spawn\" (time \"" time:$[0-9.]+ "\")"
-    { return { type: "firstHealAfterSpawn", player, time: parseFloat(time) }; }
+    { return { type: "firstHealAfterSpawn", player, time: float(time) }; }
 
 KillAssistEvent
   = player:Player " triggered \"kill assist\" against " victim:Player
@@ -186,27 +143,15 @@ KillAssistEvent
     " (victim_position \"" victimPos:$[^\"]+ "\")"
     {
       return {
-        type: "killAssist",
-        player,
-        victim,
-        assisterPosition: assisterPos,
-        attackerPosition: attackerPos,
-        victimPosition: victimPos
+        type: "killAssist", player, victim,
+        assisterPosition: assisterPos, attackerPosition: attackerPos, victimPosition: victimPos
       };
     }
 
-DominationEvent
-  = player:Player " triggered \"domination\" against " victim:Player assist:OptionalAssist
+DomRevEvent
+  = player:Player " triggered \"" trigger:$("domination" / "revenge") "\" against " victim:Player assist:OptionalAssist
     {
-      const result = { type: "domination", player, victim };
-      if (assist) result.assist = true;
-      return result;
-    }
-
-RevengeEvent
-  = player:Player " triggered \"revenge\" against " victim:Player assist:OptionalAssist
-    {
-      const result = { type: "revenge", player, victim };
+      const result = { type: trigger, player, victim };
       if (assist) result.assist = true;
       return result;
     }
@@ -217,63 +162,29 @@ OptionalAssist
 
 CaptureBlockedEvent
   = player:Player " triggered \"captureblocked\" (cp \"" cp:$[0-9]+ "\") (cpname \"" cpname:$[^\"]+ "\") (position \"" position:$[^\"]+ "\")"
+    { return { type: "captureBlocked", player, cp: int(cp), cpname, position }; }
+
+ObjectActionEvent
+  = player:Player " triggered \""
+    trigger:$("player_builtobject" / "object_detonated" / "player_carryobject" / "player_dropobject")
+    "\" (object \"" object:$[^\"]+ "\") (position \"" position:$[^\"]+ "\")"
     {
-      return {
-        type: "captureBlocked",
-        player,
-        cp: parseInt(cp, 10),
-        cpname,
-        position
-      };
+      const types = { player_builtobject: "playerBuiltObject", object_detonated: "objectDetonated", player_carryobject: "playerCarryObject", player_dropobject: "playerDropObject" };
+      return { type: types[trigger], player, object, position };
     }
 
-PlayerBuiltObjectEvent
-  = player:Player " triggered \"player_builtobject\" (object \"" object:$[^\"]+ "\") (position \"" position:$[^\"]+ "\")"
-    { return { type: "playerBuiltObject", player, object, position }; }
-
 KilledObjectEvent
-  = player:Player " triggered \"killedobject\" " kvs:KilledObjectKVs
+  = player:Player " triggered \"killedobject\" " kvs:KVs
     {
       const result = {
-        type: "killedObject",
-        player,
-        object: kvs.object,
-        weapon: kvs.weapon || "",
-        objectowner: kvs.objectowner,
+        type: "killedObject", player,
+        object: kvs.object, weapon: kvs.weapon || "", objectowner: kvs.objectowner,
         attackerPosition: kvs.attacker_position
       };
       if (kvs.assist) result.assist = true;
       if (kvs.assister_position) result.assisterPosition = kvs.assister_position;
       return result;
     }
-
-KilledObjectKVs
-  = pairs:KilledObjectKV+
-    {
-      const obj = {};
-      for (const [k, v] of pairs) obj[k] = v;
-      return obj;
-    }
-
-KilledObjectKV
-  = "(object \"" v:$[^\"]+ "\")" _? { return ["object", v]; }
-  / "(weapon \"" v:$[^\"]+ "\")" _? { return ["weapon", v]; }
-  / "(objectowner \"" v:$[^\"]+ "\")" _? { return ["objectowner", v]; }
-  / "(attacker_position \"" v:$[^\"]+ "\")" _? { return ["attacker_position", v]; }
-  / "(assist \"1\")" _? { return ["assist", true]; }
-  / "(assister_position \"" v:$[^\"]+ "\")" _? { return ["assister_position", v]; }
-
-ObjectDetonatedEvent
-  = player:Player " triggered \"object_detonated\" (object \"" object:$[^\"]+ "\") (position \"" position:$[^\"]+ "\")"
-    { return { type: "objectDetonated", player, object, position }; }
-
-PlayerCarryObjectEvent
-  = player:Player " triggered \"player_carryobject\" (object \"" object:$[^\"]+ "\") (position \"" position:$[^\"]+ "\")"
-    { return { type: "playerCarryObject", player, object, position }; }
-
-PlayerDropObjectEvent
-  = player:Player " triggered \"player_dropobject\" (object \"" object:$[^\"]+ "\") (position \"" position:$[^\"]+ "\")"
-    { return { type: "playerDropObject", player, object, position }; }
 
 PlayerExtinguishedEvent
   = player:Player " triggered \"player_extinguished\" against " victim:Player
@@ -282,18 +193,14 @@ PlayerExtinguishedEvent
     " (victim_position \"" victimPos:$[^\"]+ "\")"
     {
       return {
-        type: "playerExtinguished",
-        player,
-        victim,
-        weapon,
-        attackerPosition: attackerPos,
-        victimPosition: victimPos
+        type: "playerExtinguished", player, victim, weapon,
+        attackerPosition: attackerPos, victimPosition: victimPos
       };
     }
 
 LostUberAdvantageEvent
   = player:Player " triggered \"lost_uber_advantage\" (time \"" time:$[0-9]+ "\")"
-    { return { type: "lostUberAdvantage", player, time: parseInt(time, 10) }; }
+    { return { type: "lostUberAdvantage", player, time: int(time) }; }
 
 MatchPauseEvent
   = player:Player " triggered \"matchpause\""
@@ -307,76 +214,40 @@ MatchUnpauseEvent
 
 PassGetEvent
   = player:Player " triggered \"pass_get\" (firstcontact \"" firstcontact:$[0-9]+ "\") (position \"" position:$[^\"]+ "\")"
-    { return { type: "passGet", player, firstcontact: parseInt(firstcontact, 10) === 1, position }; }
+    { return { type: "passGet", player, firstcontact: int(firstcontact) === 1, position }; }
 
 PassFreeEvent
   = player:Player " triggered \"pass_free\" (position \"" position:$[^\"]+ "\")"
     { return { type: "passFree", player, position }; }
 
 PassPassCaughtEvent
-  = player:Player " triggered \"pass_pass_caught\" against " target:Player " " kvs:PassCaughtKVs
+  = player:Player " triggered \"pass_pass_caught\" against " target:Player " " kvs:KVs
     {
       return {
-        type: "passPassCaught",
-        player,
-        target,
-        interception: parseInt(kvs.interception, 10) === 1,
-        save: parseInt(kvs.save, 10) === 1,
-        handoff: parseInt(kvs.handoff, 10) === 1,
-        dist: parseFloat(kvs.dist),
-        duration: parseFloat(kvs.duration),
+        type: "passPassCaught", player, target,
+        interception: int(kvs.interception) === 1,
+        save: int(kvs.save) === 1,
+        handoff: int(kvs.handoff) === 1,
+        dist: float(kvs.dist),
+        duration: float(kvs.duration),
         throwerPosition: kvs.thrower_position,
         catcherPosition: kvs.catcher_position
       };
     }
 
-PassCaughtKVs
-  = pairs:PassCaughtKV+
-    {
-      const obj = {};
-      for (const [k, v] of pairs) obj[k] = v;
-      return obj;
-    }
-
-PassCaughtKV
-  = "(interception \"" v:$[0-9]+ "\")" _? { return ["interception", v]; }
-  / "(save \"" v:$[0-9]+ "\")" _? { return ["save", v]; }
-  / "(handoff \"" v:$[0-9]+ "\")" _? { return ["handoff", v]; }
-  / "(dist \"" v:$[0-9.]+ "\")" _? { return ["dist", v]; }
-  / "(duration \"" v:$[0-9.]+ "\")" _? { return ["duration", v]; }
-  / "(thrower_position \"" v:$[^\"]+ "\")" _? { return ["thrower_position", v]; }
-  / "(catcher_position \"" v:$[^\"]+ "\")" _? { return ["catcher_position", v]; }
-
 PassScoreEvent
-  = player:Player " triggered \"pass_score\" " kvs:PassScoreKVs
+  = player:Player " triggered \"pass_score\" " kvs:KVs
     {
       return {
-        type: "passScore",
-        player,
-        points: parseInt(kvs.points, 10),
-        panacea: parseInt(kvs.panacea, 10) === 1,
-        winStrat: parseInt(kvs.win_strat, 10) === 1,
-        deathbomb: parseInt(kvs.deathbomb, 10) === 1,
-        dist: parseInt(kvs.dist, 10),
+        type: "passScore", player,
+        points: int(kvs.points),
+        panacea: int(kvs.panacea) === 1,
+        winStrat: int(kvs["win strat"]) === 1,
+        deathbomb: int(kvs.deathbomb) === 1,
+        dist: int(kvs.dist),
         position: kvs.position
       };
     }
-
-PassScoreKVs
-  = pairs:PassScoreKV+
-    {
-      const obj = {};
-      for (const [k, v] of pairs) obj[k] = v;
-      return obj;
-    }
-
-PassScoreKV
-  = "(points \"" v:$[0-9]+ "\")" _? { return ["points", v]; }
-  / "(panacea \"" v:$[0-9]+ "\")" _? { return ["panacea", v]; }
-  / "(win strat \"" v:$[0-9]+ "\")" _? { return ["win_strat", v]; }
-  / "(deathbomb \"" v:$[0-9]+ "\")" _? { return ["deathbomb", v]; }
-  / "(dist \"" v:$[0-9]+ "\")" _? { return ["dist", v]; }
-  / "(position \"" v:$[^\"]+ "\")" _? { return ["position", v]; }
 
 PassScoreAssistEvent
   = player:Player " triggered \"pass_score_assist\" (position \"" position:$[^\"]+ "\")"
@@ -389,12 +260,9 @@ PassBallStolenEvent
     " (victim_position \"" victimPos:$[^\"]+ "\")"
     {
       return {
-        type: "passBallStolen",
-        player,
-        victim,
-        stealDefense: parseInt(stealDefense, 10) === 1,
-        thiefPosition: thiefPos,
-        victimPosition: victimPos
+        type: "passBallStolen", player, victim,
+        stealDefense: int(stealDefense) === 1,
+        thiefPosition: thiefPos, victimPosition: victimPos
       };
     }
 
@@ -404,18 +272,15 @@ CatapultEvent
 
 MedicDeathExEvent
   = player:Player " triggered \"medic_death_ex\" (uberpct \"" uberpct:$[0-9]+ "\")"
-    { return { type: "medicDeathEx", player, uberpct: parseInt(uberpct, 10) }; }
+    { return { type: "medicDeathEx", player, uberpct: int(uberpct) }; }
 
 // ─── Non-triggered player events ──────────────────────────
 
 KillEvent
-  = player:Player " killed " victim:Player " with \"" weapon:$[^\"]+ "\"" kvs:KillKVs
+  = player:Player " killed " victim:Player " with \"" weapon:$[^\"]+ "\"" kvs:KVs
     {
       const result = {
-        type: "kill",
-        player,
-        victim,
-        weapon,
+        type: "kill", player, victim, weapon,
         attackerPosition: kvs.attacker_position,
         victimPosition: kvs.victim_position
       };
@@ -423,29 +288,9 @@ KillEvent
       return result;
     }
 
-KillKVs
-  = pairs:KillKV+
-    {
-      const obj = {};
-      for (const [k, v] of pairs) obj[k] = v;
-      return obj;
-    }
-
-KillKV
-  = " (customkill \"" v:$[^\"]+ "\")" { return ["customkill", v]; }
-  / " (attacker_position \"" v:$[^\"]+ "\")" { return ["attacker_position", v]; }
-  / " (victim_position \"" v:$[^\"]+ "\")" { return ["victim_position", v]; }
-
 SuicideEvent
   = player:Player " committed suicide with \"" weapon:$[^\"]+ "\" (attacker_position \"" attackerPos:$[^\"]+ "\")"
-    {
-      return {
-        type: "suicide",
-        player,
-        weapon,
-        attackerPosition: attackerPos
-      };
-    }
+    { return { type: "suicide", player, weapon, attackerPosition: attackerPos }; }
 
 // m_filter variants must come before normal SpawnedEvent
 SpawnedMFilterEvent
@@ -476,12 +321,11 @@ PickedUpItemEvent
   = player:Player " picked up item \"" item:$[^\"]+ "\"" healing:PickedUpHealing?
     {
       const result = { type: "pickedUpItem", player, item };
-      if (healing !== null) result.healing = healing;
+      if (healing !== null) result.healing = int(healing);
       return result;
     }
 
-PickedUpHealing
-  = " (healing \"" v:$[0-9]+ "\")" { return parseInt(v, 10); }
+PickedUpHealing = " (healing \"" @$[0-9]+ "\")"
 
 SayTeamEvent
   = player:Player " say_team \"" message:$[^\"]* "\""
@@ -510,20 +354,13 @@ EnteredGameEvent
 // ─── Team / World events ──────────────────────────────────
 
 PointCapturedEvent
-  = "Team \"" team:$[^\"]+ "\" triggered \"pointcaptured\" (cp \"" cp:$[0-9]+ "\") (cpname \"" cpname:$[^\"]+ "\") (numcappers \"" numcappers:$[0-9]+ "\")" cappers:CapperList _?
+  = "Team \"" team:$[^\"]+ "\" triggered \"pointcaptured\" (cp \"" cp:$[0-9]+ "\") (cpname \"" cpname:$[^\"]+ "\") (numcappers \"" numcappers:$[0-9]+ "\")" cappers:Capper* _?
     {
       return {
-        type: "pointCaptured",
-        team,
-        cp: parseInt(cp, 10),
-        cpname,
-        numcappers: parseInt(numcappers, 10),
-        players: cappers
+        type: "pointCaptured", team,
+        cp: int(cp), cpname, numcappers: int(numcappers), players: cappers
       };
     }
-
-CapperList
-  = cappers:Capper* { return cappers; }
 
 Capper
   = " (player" [0-9]+ " \"" player:$[^\"]+ "\") (position" [0-9]+ " \"" position:$[^\"]+ "\")"
@@ -533,17 +370,9 @@ IntermissionWinLimitEvent
   = "Team \"" team:$[^\"]+ "\" triggered \"Intermission_Win_Limit\""
     { return { type: "intermissionWinLimit", team }; }
 
-RoundStartEvent
-  = "World triggered \"Round_Start\""
-    { return { type: "roundStart" }; }
-
-RoundSetupBeginEvent
-  = "World triggered \"Round_Setup_Begin\""
-    { return { type: "roundSetupBegin" }; }
-
-RoundSetupEndEvent
-  = "World triggered \"Round_Setup_End\""
-    { return { type: "roundSetupEnd" }; }
+SimpleWorldEvent
+  = "World triggered \"" name:$("Round_Start" / "Round_Setup_Begin" / "Round_Setup_End" / "Round_Overtime" / "Game_Paused" / "Game_Unpaused") "\""
+    { return { type: name.replace(/_/g, '').replace(/^./, c => c.toLowerCase()) }; }
 
 RoundWinEvent
   = "World triggered \"Round_Win\" (winner \"" winner:$[^\"]+ "\")"
@@ -551,49 +380,19 @@ RoundWinEvent
 
 RoundLengthEvent
   = "World triggered \"Round_Length\" (seconds \"" seconds:$[0-9.]+ "\")"
-    { return { type: "roundLength", seconds: parseFloat(seconds) }; }
-
-RoundOvertimeEvent
-  = "World triggered \"Round_Overtime\""
-    { return { type: "roundOvertime" }; }
+    { return { type: "roundLength", seconds: float(seconds) }; }
 
 GameOverEvent
   = "World triggered \"Game_Over\" reason \"" reason:$[^\"]+ "\""
     { return { type: "gameOver", reason }; }
 
-GamePausedEvent
-  = "World triggered \"Game_Paused\""
-    { return { type: "gamePaused" }; }
-
-GameUnpausedEvent
-  = "World triggered \"Game_Unpaused\""
-    { return { type: "gameUnpaused" }; }
-
 PauseLengthEvent
   = "World triggered \"Pause_Length\" (seconds \"" seconds:$[0-9.]+ "\")"
-    { return { type: "pauseLength", seconds: parseFloat(seconds) }; }
+    { return { type: "pauseLength", seconds: float(seconds) }; }
 
-CurrentScoreEvent
-  = "Team \"" team:$[^\"]+ "\" current score \"" score:$[0-9]+ "\" with \"" numPlayers:$[0-9]+ "\" players"
-    {
-      return {
-        type: "currentScore",
-        team,
-        score: parseInt(score, 10),
-        numPlayers: parseInt(numPlayers, 10)
-      };
-    }
-
-FinalScoreEvent
-  = "Team \"" team:$[^\"]+ "\" final score \"" score:$[0-9]+ "\" with \"" numPlayers:$[0-9]+ "\" players"
-    {
-      return {
-        type: "finalScore",
-        team,
-        score: parseInt(score, 10),
-        numPlayers: parseInt(numPlayers, 10)
-      };
-    }
+ScoreEvent
+  = "Team \"" team:$[^\"]+ "\" " kind:$("current" / "final") " score \"" score:$[0-9]+ "\" with \"" numPlayers:$[0-9]+ "\" players"
+    { return { type: kind + "Score", team, score: int(score), numPlayers: int(numPlayers) }; }
 
 // ─── System/Plugin events ─────────────────────────────────
 
@@ -615,7 +414,7 @@ PanaceaCheckEvent
 
 PrintingForClientEvent
   = "Printing for client: " client:$[0-9]+
-    { return { type: "printingForClient", client: parseInt(client, 10) }; }
+    { return { type: "printingForClient", client: int(client) }; }
 
 // ─── Fallback ─────────────────────────────────────────────
 
@@ -623,31 +422,20 @@ UnknownEvent
   = body:$(.*)
     { return { type: "unknown", body }; }
 
+// ─── Generic KV parsing ──────────────────────────────────
+
+KVs = pairs:KV+ { return kvs(pairs); }
+
+KV = _? "(" key:$[^"]+ "\"" value:$[^"]* "\")" { return [key.trimEnd(), value]; }
+
 // ─── Player parsing ───────────────────────────────────────
-// Player format: "name<entityId><steamId><team>"
-// Names can contain ANY characters including < > " unicode etc.
-// We parse from the right: find the last occurrence of <team>"
-// by matching the suffix pattern.
 
-Player
-  = "\"" chars:PlayerChars "\""
-    { return chars; }
+Player = "\"" @PlayerChars "\""
 
-// Match everything greedily, then parse the player structure from the captured string.
-// The pattern is: name<digits><steamid><team>
-// Steam IDs are treated as opaque strings — no format validation.
 PlayerChars
   = name:$PlayerNameChars "<" entityId:$[0-9]+ "><" steamId:$[^>]+ "><" team:$[^>]* ">"
-    {
-      return {
-        name,
-        entityId: parseInt(entityId, 10),
-        steamId,
-        team
-      };
-    }
+    { return { name, entityId: int(entityId), steamId, team }; }
 
-// Player name: greedily match characters, but stop before the <entityId><steamId><team>" suffix
 PlayerNameChars
   = chars:PlayerNameChar+ { return chars.join(""); }
 

@@ -38,6 +38,7 @@ const output =
   events
     .map((e) => {
       if (omitRaw) {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { raw, ...rest } = e;
         return JSON.stringify(rest);
       } else {
@@ -48,5 +49,5 @@ const output =
 
 writeFileSync(outputPath, output);
 console.log(
-  `Wrote ${events.length} events to ${outputPath}${omitRaw ? ' (omitted "raw" prop)' : ""}`,
+  `Wrote ${String(events.length)} events to ${outputPath}${omitRaw ? ' (omitted "raw" prop)' : ""}`,
 );
