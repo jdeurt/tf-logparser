@@ -6,13 +6,13 @@ A TypeScript parser for Team Fortress 2 server logs. Parses raw TF2 log files in
 
 ```ts
 import { parseLog } from "tf-logparser";
-import type { TfLogEvent } from "tf-logparser";
+import type { RawTfLogEvent } from "tf-logparser";
 
 const raw = fs.readFileSync("match.log", "utf-8");
-const events: TfLogEvent[] = parseLog(raw);
+const events: RawTfLogEvent[] = parseLog(raw);
 ```
 
-Every event includes a `timestamp` (ms since epoch) and the original `raw` log line. Events are discriminated by the `type` field, so you can narrow with a simple check:
+Every event includes a `timestamp` (ms since epoch) and a 1-based `lineNumber` into the original log. Events are discriminated by the `type` field, so you can narrow with a simple check:
 
 ```ts
 for (const event of events) {
@@ -188,11 +188,11 @@ Measured on real match logs (median of 20 runs after 3 warmup runs):
 
 | Fixture      |    Size | Lines |     Time | Lines/sec |
 | ------------ | ------: | ----: | -------: | --------: |
-| cp.log       | 1601 KB | 12692 | 159.6 ms |    79,542 |
-| koth.log     | 1147 KB |  8519 |  88.7 ms |    96,013 |
-| passtime.log | 1246 KB | 10260 | 179.4 ms |    57,191 |
-| payload.log  | 1463 KB | 11066 | 129.8 ms |    85,237 |
-| ultiduo.log  |  285 KB |  2172 |  25.1 ms |    86,621 |
+| cp.log       | 1601 KB | 12692 | 154.6 ms |    82,119 |
+| koth.log     | 1147 KB |  8519 |  91.6 ms |    93,030 |
+| passtime.log | 1246 KB | 10260 | 185.9 ms |    55,189 |
+| payload.log  | 1463 KB | 11066 | 133.4 ms |    82,982 |
+| ultiduo.log  |  285 KB |  2172 |  25.0 ms |    86,763 |
 
 Run benchmarks yourself with:
 
