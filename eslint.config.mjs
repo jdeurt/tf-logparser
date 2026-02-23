@@ -4,7 +4,7 @@ import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
 
 export default defineConfig(
   {
-    ignores: ["dist/", "node_modules/", "src/generated/"],
+    ignores: ["dist/", "node_modules/", "src/parser/generated/"],
   },
   ...tseslint.configs.strictTypeChecked,
   {
@@ -13,7 +13,8 @@ export default defineConfig(
         projectService: {
           allowDefaultProject: [
             "eslint.config.mjs",
-            "src/__tests__/*.ts",
+            "src/__tests__/parser/*.test.ts",
+            "src/__tests__/analysis/*.test.ts",
             "scripts/*.ts",
           ],
         },

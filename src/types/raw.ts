@@ -1,9 +1,4 @@
-export interface Player {
-  name: string;
-  entityId: number;
-  steamId: string;
-  team: string;
-}
+import type { Player } from "./player.js";
 
 export interface RawBaseEvent {
   timestamp: number;

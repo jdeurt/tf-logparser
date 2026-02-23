@@ -1,4 +1,4 @@
 node_modules/
 dist/
-src/generated/*.js
+src/parser/generated/*.js
 temp/

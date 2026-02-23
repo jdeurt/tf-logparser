@@ -1,10 +1,10 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "fs";
 import { join } from "path";
-import { parseLog } from "../parser.js";
-import { groupTeams } from "../analysis/groupTeams.js";
+import { parseLog } from "../../parser/index.js";
+import { groupTeams } from "../../analysis/groupTeams.js";
 
-const fixturesDir = join(__dirname, "../../fixtures");
+const fixturesDir = join(__dirname, "../../../fixtures");
 
 function loadFixture(name: string) {
   return readFileSync(join(fixturesDir, name), "utf-8");

@@ -73,7 +73,7 @@ import type {
   RawTfLogEvent,
   RawUnknownEvent,
   RawWorldMetaDataEvent,
-} from "./types.js";
+} from "../../types/index.js";
 
 const ajv = new Ajv({ discriminator: true });
 

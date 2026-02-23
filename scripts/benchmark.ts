@@ -1,5 +1,5 @@
 import { readFileSync, readdirSync } from "fs";
-import { parseLog } from "../src/parser.js";
+import { parseLog } from "../src/parser/index.js";
 
 const WARMUP_RUNS = 3;
 const BENCH_RUNS = 20;

@@ -1,4 +1,4 @@
-import type { RawTfLogEvent } from "./types.js";
+import type { RawTfLogEvent } from "../types/index.js";
 import { parse } from "./generated/tf2-parser.js";
 
 export function parseLog(rawText: string): RawTfLogEvent[] {

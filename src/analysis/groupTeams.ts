@@ -1,14 +1,5 @@
-import type { RawTfLogEvent } from "../types.js";
-
-export interface TeamColorPeriod {
-  color: "Red" | "Blue";
-  start: number;
-}
-
-export interface TeamInfo {
-  playerSteamIds: string[];
-  colors: TeamColorPeriod[];
-}
+import type { RawTfLogEvent } from "../types/index.js";
+import type { TeamInfo, TeamColorPeriod } from "../types/index.js";
 
 type TeamColor = "Red" | "Blue";
 
@@ -127,7 +118,8 @@ export function groupTeams(events: RawTfLogEvent[]): TeamInfo[] {
     }
   }
 
-  const firstTs = events.length > 0 ? (events[0] as RawTfLogEvent).timestamp : 0;
+  const firstTs =
+    events.length > 0 ? (events[0] as RawTfLogEvent).timestamp : 0;
   const result: TeamInfo[] = [];
 
   for (const [initialColor, steamIds] of [

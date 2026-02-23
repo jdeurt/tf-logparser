@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from "node:fs";
-import { parseLog } from "../src/parser.js";
+import { parseLog } from "../src/parser/index.js";
 import { dirname } from "node:path";
 import { existsSync, mkdirSync } from "node:fs";
 
