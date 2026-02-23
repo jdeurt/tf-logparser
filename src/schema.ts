@@ -1,74 +1,78 @@
 import Ajv, { type JSONSchemaType } from "ajv";
 import type {
-  BaseEvent,
-  CaptureBlockedEvent,
-  MetaEvent,
-  CatapultEvent,
-  ChangedNameEvent,
-  ChangedRoleEvent,
-  ChargeDeployedEvent,
-  ChargeEndedEvent,
-  ChargeReadyEvent,
-  ChargedMFilterEvent,
-  ConnectedEvent,
-  CurrentScoreEvent,
-  DamageEvent,
-  DemosTfEvent,
-  DominationEvent,
-  EmptyUberEvent,
-  EnteredGameEvent,
-  FinalScoreEvent,
-  FirstHealAfterSpawnEvent,
-  GameOverEvent,
-  GamePausedEvent,
-  GameUnpausedEvent,
-  HealedEvent,
-  IntermissionWinLimitEvent,
-  JoinedTeamEvent,
-  KillAssistEvent,
-  KillEvent,
-  KilledObjectEvent,
-  LostUberAdvantageEvent,
-  MatchPauseEvent,
-  MatchUnpauseEvent,
-  MedicDeathEvent,
-  MedicDeathExEvent,
-  ObjectDetonatedEvent,
-  PanaceaCheckEvent,
-  PassBallStolenEvent,
-  PassFreeEvent,
-  PassGetEvent,
-  PassPassCaughtEvent,
-  PassScoreAssistEvent,
-  PassScoreEvent,
-  PasstimeBallDamageEvent,
-  PasstimeBallSpawnedEvent,
-  PauseLengthEvent,
-  PickedUpItemEvent,
+  RawBaseEvent,
+  RawCaptureBlockedEvent,
+  RawMetaEvent,
+  RawCatapultEvent,
+  RawChangedNameEvent,
+  RawChangedRoleEvent,
+  RawChargeDeployedEvent,
+  RawChargeEndedEvent,
+  RawChargeReadyEvent,
+  RawChargedMFilterEvent,
+  RawConnectedEvent,
+  RawCurrentScoreEvent,
+  RawDamageEvent,
+  RawDisconnectedEvent,
+  RawDominationEvent,
+  RawEmptyUberEvent,
+  RawEnteredGameEvent,
+  RawFinalScoreEvent,
+  RawFirstHealAfterSpawnEvent,
+  RawGameOverEvent,
+  RawGamePausedEvent,
+  RawGameUnpausedEvent,
+  RawHealedEvent,
+  RawIntermissionWinLimitEvent,
+  RawJoinedTeamEvent,
+  RawKillAssistEvent,
+  RawKillEvent,
+  RawKilledObjectEvent,
+  RawLostUberAdvantageEvent,
+  RawMatchPauseEvent,
+  RawMatchUnpauseEvent,
+  RawMedicDeathEvent,
+  RawMedicDeathExEvent,
+  RawObjectDetonatedEvent,
+  RawPanaceaCheckEvent,
+  RawPassBallStolenEvent,
+  RawPassFreeEvent,
+  RawPassGetEvent,
+  RawPassPassCaughtEvent,
+  RawPassScoreAssistEvent,
+  RawPassScoreEvent,
+  RawPasstimeBallDamageEvent,
+  RawPasstimeBallSpawnedEvent,
+  RawPauseLengthEvent,
+  RawPickedUpItemEvent,
   Player,
-  PlayerBuiltObjectEvent,
-  PlayerCarryObjectEvent,
-  PlayerDropObjectEvent,
-  PlayerExtinguishedEvent,
-  PointCapturedEvent,
-  PositionReportEvent,
-  PrintingForClientEvent,
-  RevengeEvent,
-  RoundLengthEvent,
-  RoundOvertimeEvent,
-  RoundSetupBeginEvent,
-  RoundSetupEndEvent,
-  RoundStartEvent,
-  RoundWinEvent,
-  SayEvent,
-  SayTeamEvent,
-  ShotFiredEvent,
-  ShotHitEvent,
-  SpawnedEvent,
-  SpawnedMFilterEvent,
-  SuicideEvent,
-  TfLogEvent,
-  UnknownEvent,
+  RawPlayerBuiltObjectEvent,
+  RawPlayerCarryObjectEvent,
+  RawPlayerDropObjectEvent,
+  RawPlayerExtinguishedEvent,
+  RawPointCapturedEvent,
+  RawPositionReportEvent,
+  RawPrintingForClientEvent,
+  RawRevengeEvent,
+  RawRoundLengthEvent,
+  RawRoundOvertimeEvent,
+  RawRoundStalemateEvent,
+  RawRoundSetupBeginEvent,
+  RawRoundSetupEndEvent,
+  RawRoundStartEvent,
+  RawRoundWinEvent,
+  RawSayEvent,
+  RawSayTeamEvent,
+  RawServerPluginMessageEvent,
+  RawShotFiredEvent,
+  RawShotHitEvent,
+  RawSpawnedEvent,
+  RawSpawnedMFilterEvent,
+  RawSteamUserIdValidatedEvent,
+  RawSuicideEvent,
+  RawTfLogEvent,
+  RawUnknownEvent,
+  RawWorldMetaDataEvent,
 } from "./types.js";
 
 const ajv = new Ajv({ discriminator: true });
@@ -92,13 +96,13 @@ const N = "number" as const;
 const I = "integer" as const;
 const B = "boolean" as const;
 
-type EventKey<E extends BaseEvent> = Exclude<
+type EventKey<E extends RawBaseEvent> = Exclude<
   keyof E & string,
-  keyof BaseEvent | "type"
+  keyof RawBaseEvent | "type"
 >;
 
 /** Build a single event sub-schema with base fields baked in. */
-function eventSchema<E extends BaseEvent & { type: string }>(
+function eventSchema<E extends RawBaseEvent & { type: string }>(
   typeConst: E["type"],
   props: { [K in EventKey<E>]: unknown },
   required: EventKey<E>[],
@@ -107,18 +111,18 @@ function eventSchema<E extends BaseEvent & { type: string }>(
     type: "object" as const,
     properties: {
       timestamp: { type: N },
-      raw: { type: T },
+      lineNumber: { type: I },
       type: { type: T, const: typeConst },
       ...props,
     },
-    required: ["timestamp", "raw", "type", ...required],
+    required: ["timestamp", "lineNumber", "type", ...required],
     additionalProperties: false as const,
   };
 }
 
 // ─── Player-triggered events ─────────────────────────────
 
-const changedRoleSchema = eventSchema<ChangedRoleEvent>(
+const changedRoleSchema = eventSchema<RawChangedRoleEvent>(
   "changedRole",
   {
     player: playerSchema,
@@ -127,7 +131,7 @@ const changedRoleSchema = eventSchema<ChangedRoleEvent>(
   ["player", "role"],
 );
 
-const damageSchema = eventSchema<DamageEvent>(
+const damageSchema = eventSchema<RawDamageEvent>(
   "damage",
   {
     player: playerSchema,
@@ -144,7 +148,7 @@ const damageSchema = eventSchema<DamageEvent>(
   ["player", "victim", "damage", "weapon"],
 );
 
-const shotFiredSchema = eventSchema<ShotFiredEvent>(
+const shotFiredSchema = eventSchema<RawShotFiredEvent>(
   "shotFired",
   {
     player: playerSchema,
@@ -153,7 +157,7 @@ const shotFiredSchema = eventSchema<ShotFiredEvent>(
   ["player", "weapon"],
 );
 
-const shotHitSchema = eventSchema<ShotHitEvent>(
+const shotHitSchema = eventSchema<RawShotHitEvent>(
   "shotHit",
   {
     player: playerSchema,
@@ -162,7 +166,7 @@ const shotHitSchema = eventSchema<ShotHitEvent>(
   ["player", "weapon"],
 );
 
-const pickedUpItemSchema = eventSchema<PickedUpItemEvent>(
+const pickedUpItemSchema = eventSchema<RawPickedUpItemEvent>(
   "pickedUpItem",
   {
     player: playerSchema,
@@ -172,7 +176,7 @@ const pickedUpItemSchema = eventSchema<PickedUpItemEvent>(
   ["player", "item"],
 );
 
-const killSchema = eventSchema<KillEvent>(
+const killSchema = eventSchema<RawKillEvent>(
   "kill",
   {
     player: playerSchema,
@@ -185,7 +189,7 @@ const killSchema = eventSchema<KillEvent>(
   ["player", "victim", "weapon", "attackerPosition", "victimPosition"],
 );
 
-const medicDeathSchema = eventSchema<MedicDeathEvent>(
+const medicDeathSchema = eventSchema<RawMedicDeathEvent>(
   "medicDeath",
   {
     player: playerSchema,
@@ -196,7 +200,7 @@ const medicDeathSchema = eventSchema<MedicDeathEvent>(
   ["player", "victim", "healing", "ubercharge"],
 );
 
-const medicDeathExSchema = eventSchema<MedicDeathExEvent>(
+const medicDeathExSchema = eventSchema<RawMedicDeathExEvent>(
   "medicDeathEx",
   {
     player: playerSchema,
@@ -205,7 +209,7 @@ const medicDeathExSchema = eventSchema<MedicDeathExEvent>(
   ["player", "uberpct"],
 );
 
-const spawnedSchema = eventSchema<SpawnedEvent>(
+const spawnedSchema = eventSchema<RawSpawnedEvent>(
   "spawned",
   {
     player: playerSchema,
@@ -214,7 +218,7 @@ const spawnedSchema = eventSchema<SpawnedEvent>(
   ["player", "role"],
 );
 
-const healedSchema = eventSchema<HealedEvent>(
+const healedSchema = eventSchema<RawHealedEvent>(
   "healed",
   {
     player: playerSchema,
@@ -226,7 +230,7 @@ const healedSchema = eventSchema<HealedEvent>(
   ["player", "target", "healing"],
 );
 
-const emptyUberSchema = eventSchema<EmptyUberEvent>(
+const emptyUberSchema = eventSchema<RawEmptyUberEvent>(
   "emptyUber",
   {
     player: playerSchema,
@@ -234,7 +238,7 @@ const emptyUberSchema = eventSchema<EmptyUberEvent>(
   ["player"],
 );
 
-const chargeReadySchema = eventSchema<ChargeReadyEvent>(
+const chargeReadySchema = eventSchema<RawChargeReadyEvent>(
   "chargeReady",
   {
     player: playerSchema,
@@ -242,7 +246,7 @@ const chargeReadySchema = eventSchema<ChargeReadyEvent>(
   ["player"],
 );
 
-const chargeDeployedSchema = eventSchema<ChargeDeployedEvent>(
+const chargeDeployedSchema = eventSchema<RawChargeDeployedEvent>(
   "chargeDeployed",
   {
     player: playerSchema,
@@ -251,7 +255,7 @@ const chargeDeployedSchema = eventSchema<ChargeDeployedEvent>(
   ["player", "medigun"],
 );
 
-const chargeEndedSchema = eventSchema<ChargeEndedEvent>(
+const chargeEndedSchema = eventSchema<RawChargeEndedEvent>(
   "chargeEnded",
   {
     player: playerSchema,
@@ -260,7 +264,7 @@ const chargeEndedSchema = eventSchema<ChargeEndedEvent>(
   ["player", "duration"],
 );
 
-const firstHealAfterSpawnSchema = eventSchema<FirstHealAfterSpawnEvent>(
+const firstHealAfterSpawnSchema = eventSchema<RawFirstHealAfterSpawnEvent>(
   "firstHealAfterSpawn",
   {
     player: playerSchema,
@@ -269,7 +273,7 @@ const firstHealAfterSpawnSchema = eventSchema<FirstHealAfterSpawnEvent>(
   ["player", "time"],
 );
 
-const killAssistSchema = eventSchema<KillAssistEvent>(
+const killAssistSchema = eventSchema<RawKillAssistEvent>(
   "killAssist",
   {
     player: playerSchema,
@@ -287,7 +291,7 @@ const killAssistSchema = eventSchema<KillAssistEvent>(
   ],
 );
 
-const dominationSchema = eventSchema<DominationEvent>(
+const dominationSchema = eventSchema<RawDominationEvent>(
   "domination",
   {
     player: playerSchema,
@@ -297,7 +301,7 @@ const dominationSchema = eventSchema<DominationEvent>(
   ["player", "victim"],
 );
 
-const revengeSchema = eventSchema<RevengeEvent>(
+const revengeSchema = eventSchema<RawRevengeEvent>(
   "revenge",
   {
     player: playerSchema,
@@ -307,7 +311,7 @@ const revengeSchema = eventSchema<RevengeEvent>(
   ["player", "victim"],
 );
 
-const captureBlockedSchema = eventSchema<CaptureBlockedEvent>(
+const captureBlockedSchema = eventSchema<RawCaptureBlockedEvent>(
   "captureBlocked",
   {
     player: playerSchema,
@@ -318,21 +322,21 @@ const captureBlockedSchema = eventSchema<CaptureBlockedEvent>(
   ["player", "cp", "cpname", "position"],
 );
 
-const killedObjectSchema = eventSchema<KilledObjectEvent>(
+const killedObjectSchema = eventSchema<RawKilledObjectEvent>(
   "killedObject",
   {
     player: playerSchema,
     object: { type: T },
-    weapon: { type: T },
+    weapon: { type: T, nullable: true },
     objectowner: { type: T },
     attackerPosition: { type: T },
     assist: { type: B, nullable: true },
     assisterPosition: { type: T, nullable: true },
   },
-  ["player", "object", "weapon", "objectowner", "attackerPosition"],
+  ["player", "object", "objectowner", "attackerPosition"],
 );
 
-const playerBuiltObjectSchema = eventSchema<PlayerBuiltObjectEvent>(
+const playerBuiltObjectSchema = eventSchema<RawPlayerBuiltObjectEvent>(
   "playerBuiltObject",
   {
     player: playerSchema,
@@ -342,7 +346,7 @@ const playerBuiltObjectSchema = eventSchema<PlayerBuiltObjectEvent>(
   ["player", "object", "position"],
 );
 
-const objectDetonatedSchema = eventSchema<ObjectDetonatedEvent>(
+const objectDetonatedSchema = eventSchema<RawObjectDetonatedEvent>(
   "objectDetonated",
   {
     player: playerSchema,
@@ -352,7 +356,7 @@ const objectDetonatedSchema = eventSchema<ObjectDetonatedEvent>(
   ["player", "object", "position"],
 );
 
-const playerCarryObjectSchema = eventSchema<PlayerCarryObjectEvent>(
+const playerCarryObjectSchema = eventSchema<RawPlayerCarryObjectEvent>(
   "playerCarryObject",
   {
     player: playerSchema,
@@ -362,7 +366,7 @@ const playerCarryObjectSchema = eventSchema<PlayerCarryObjectEvent>(
   ["player", "object", "position"],
 );
 
-const playerDropObjectSchema = eventSchema<PlayerDropObjectEvent>(
+const playerDropObjectSchema = eventSchema<RawPlayerDropObjectEvent>(
   "playerDropObject",
   {
     player: playerSchema,
@@ -372,7 +376,7 @@ const playerDropObjectSchema = eventSchema<PlayerDropObjectEvent>(
   ["player", "object", "position"],
 );
 
-const playerExtinguishedSchema = eventSchema<PlayerExtinguishedEvent>(
+const playerExtinguishedSchema = eventSchema<RawPlayerExtinguishedEvent>(
   "playerExtinguished",
   {
     player: playerSchema,
@@ -384,7 +388,7 @@ const playerExtinguishedSchema = eventSchema<PlayerExtinguishedEvent>(
   ["player", "victim", "weapon", "attackerPosition", "victimPosition"],
 );
 
-const lostUberAdvantageSchema = eventSchema<LostUberAdvantageEvent>(
+const lostUberAdvantageSchema = eventSchema<RawLostUberAdvantageEvent>(
   "lostUberAdvantage",
   {
     player: playerSchema,
@@ -395,7 +399,7 @@ const lostUberAdvantageSchema = eventSchema<LostUberAdvantageEvent>(
 
 // ─── Chat events ─────────────────────────────────────────
 
-const saySchema = eventSchema<SayEvent>(
+const saySchema = eventSchema<RawSayEvent>(
   "say",
   {
     player: playerSchema,
@@ -404,7 +408,7 @@ const saySchema = eventSchema<SayEvent>(
   ["player", "message"],
 );
 
-const sayTeamSchema = eventSchema<SayTeamEvent>(
+const sayTeamSchema = eventSchema<RawSayTeamEvent>(
   "sayTeam",
   {
     player: playerSchema,
@@ -415,7 +419,7 @@ const sayTeamSchema = eventSchema<SayTeamEvent>(
 
 // ─── Non-triggered player events ─────────────────────────
 
-const suicideSchema = eventSchema<SuicideEvent>(
+const suicideSchema = eventSchema<RawSuicideEvent>(
   "suicide",
   {
     player: playerSchema,
@@ -425,7 +429,7 @@ const suicideSchema = eventSchema<SuicideEvent>(
   ["player", "weapon", "attackerPosition"],
 );
 
-const positionReportSchema = eventSchema<PositionReportEvent>(
+const positionReportSchema = eventSchema<RawPositionReportEvent>(
   "positionReport",
   {
     player: playerSchema,
@@ -434,7 +438,7 @@ const positionReportSchema = eventSchema<PositionReportEvent>(
   ["player", "position"],
 );
 
-const joinedTeamSchema = eventSchema<JoinedTeamEvent>(
+const joinedTeamSchema = eventSchema<RawJoinedTeamEvent>(
   "joinedTeam",
   {
     player: playerSchema,
@@ -443,7 +447,7 @@ const joinedTeamSchema = eventSchema<JoinedTeamEvent>(
   ["player", "newTeam"],
 );
 
-const connectedSchema = eventSchema<ConnectedEvent>(
+const connectedSchema = eventSchema<RawConnectedEvent>(
   "connected",
   {
     player: playerSchema,
@@ -452,7 +456,7 @@ const connectedSchema = eventSchema<ConnectedEvent>(
   ["player", "address"],
 );
 
-const enteredGameSchema = eventSchema<EnteredGameEvent>(
+const enteredGameSchema = eventSchema<RawEnteredGameEvent>(
   "enteredGame",
   {
     player: playerSchema,
@@ -460,7 +464,24 @@ const enteredGameSchema = eventSchema<EnteredGameEvent>(
   ["player"],
 );
 
-const changedNameSchema = eventSchema<ChangedNameEvent>(
+const disconnectedSchema = eventSchema<RawDisconnectedEvent>(
+  "disconnected",
+  {
+    player: playerSchema,
+    reason: { type: T },
+  },
+  ["player", "reason"],
+);
+
+const steamUserIdValidatedSchema = eventSchema<RawSteamUserIdValidatedEvent>(
+  "steamUserIdValidated",
+  {
+    player: playerSchema,
+  },
+  ["player"],
+);
+
+const changedNameSchema = eventSchema<RawChangedNameEvent>(
   "changedName",
   {
     player: playerSchema,
@@ -471,24 +492,29 @@ const changedNameSchema = eventSchema<ChangedNameEvent>(
 
 // ─── World / round events ────────────────────────────────
 
-const roundStartSchema = eventSchema<RoundStartEvent>("roundStart", {}, []);
-const roundSetupBeginSchema = eventSchema<RoundSetupBeginEvent>(
+const roundStartSchema = eventSchema<RawRoundStartEvent>("roundStart", {}, []);
+const roundSetupBeginSchema = eventSchema<RawRoundSetupBeginEvent>(
   "roundSetupBegin",
   {},
   [],
 );
-const roundSetupEndSchema = eventSchema<RoundSetupEndEvent>(
+const roundSetupEndSchema = eventSchema<RawRoundSetupEndEvent>(
   "roundSetupEnd",
   {},
   [],
 );
-const roundOvertimeSchema = eventSchema<RoundOvertimeEvent>(
+const roundOvertimeSchema = eventSchema<RawRoundOvertimeEvent>(
   "roundOvertime",
   {},
   [],
 );
+const roundStalemateSchema = eventSchema<RawRoundStalemateEvent>(
+  "roundStalemate",
+  {},
+  [],
+);
 
-const roundWinSchema = eventSchema<RoundWinEvent>(
+const roundWinSchema = eventSchema<RawRoundWinEvent>(
   "roundWin",
   {
     winner: { type: T },
@@ -496,7 +522,7 @@ const roundWinSchema = eventSchema<RoundWinEvent>(
   ["winner"],
 );
 
-const roundLengthSchema = eventSchema<RoundLengthEvent>(
+const roundLengthSchema = eventSchema<RawRoundLengthEvent>(
   "roundLength",
   {
     seconds: { type: N },
@@ -504,7 +530,7 @@ const roundLengthSchema = eventSchema<RoundLengthEvent>(
   ["seconds"],
 );
 
-const gameOverSchema = eventSchema<GameOverEvent>(
+const gameOverSchema = eventSchema<RawGameOverEvent>(
   "gameOver",
   {
     reason: { type: T },
@@ -512,9 +538,18 @@ const gameOverSchema = eventSchema<GameOverEvent>(
   ["reason"],
 );
 
+const worldMetaDataSchema = eventSchema<RawWorldMetaDataEvent>(
+  "worldMetaData",
+  {
+    key: { type: T },
+    value: { type: T },
+  },
+  ["key", "value"],
+);
+
 // ─── Team events ─────────────────────────────────────────
 
-const pointCapturedSchema = eventSchema<PointCapturedEvent>(
+const pointCapturedSchema = eventSchema<RawPointCapturedEvent>(
   "pointCaptured",
   {
     team: { type: T },
@@ -537,7 +572,7 @@ const pointCapturedSchema = eventSchema<PointCapturedEvent>(
   ["team", "cp", "cpname", "numcappers", "players"],
 );
 
-const currentScoreSchema = eventSchema<CurrentScoreEvent>(
+const currentScoreSchema = eventSchema<RawCurrentScoreEvent>(
   "currentScore",
   {
     team: { type: T },
@@ -547,7 +582,7 @@ const currentScoreSchema = eventSchema<CurrentScoreEvent>(
   ["team", "score", "numPlayers"],
 );
 
-const finalScoreSchema = eventSchema<FinalScoreEvent>(
+const finalScoreSchema = eventSchema<RawFinalScoreEvent>(
   "finalScore",
   {
     team: { type: T },
@@ -557,7 +592,7 @@ const finalScoreSchema = eventSchema<FinalScoreEvent>(
   ["team", "score", "numPlayers"],
 );
 
-const intermissionWinLimitSchema = eventSchema<IntermissionWinLimitEvent>(
+const intermissionWinLimitSchema = eventSchema<RawIntermissionWinLimitEvent>(
   "intermissionWinLimit",
   {
     team: { type: T },
@@ -567,7 +602,7 @@ const intermissionWinLimitSchema = eventSchema<IntermissionWinLimitEvent>(
 
 // ─── Pause events ────────────────────────────────────────
 
-const matchPauseSchema = eventSchema<MatchPauseEvent>(
+const matchPauseSchema = eventSchema<RawMatchPauseEvent>(
   "matchPause",
   {
     player: playerSchema,
@@ -575,7 +610,7 @@ const matchPauseSchema = eventSchema<MatchPauseEvent>(
   ["player"],
 );
 
-const matchUnpauseSchema = eventSchema<MatchUnpauseEvent>(
+const matchUnpauseSchema = eventSchema<RawMatchUnpauseEvent>(
   "matchUnpause",
   {
     player: playerSchema,
@@ -583,14 +618,14 @@ const matchUnpauseSchema = eventSchema<MatchUnpauseEvent>(
   ["player"],
 );
 
-const gamePausedSchema = eventSchema<GamePausedEvent>("gamePaused", {}, []);
-const gameUnpausedSchema = eventSchema<GameUnpausedEvent>(
+const gamePausedSchema = eventSchema<RawGamePausedEvent>("gamePaused", {}, []);
+const gameUnpausedSchema = eventSchema<RawGameUnpausedEvent>(
   "gameUnpaused",
   {},
   [],
 );
 
-const pauseLengthSchema = eventSchema<PauseLengthEvent>(
+const pauseLengthSchema = eventSchema<RawPauseLengthEvent>(
   "pauseLength",
   {
     seconds: { type: N },
@@ -600,7 +635,7 @@ const pauseLengthSchema = eventSchema<PauseLengthEvent>(
 
 // ─── Passtime events ─────────────────────────────────────
 
-const passGetSchema = eventSchema<PassGetEvent>(
+const passGetSchema = eventSchema<RawPassGetEvent>(
   "passGet",
   {
     player: playerSchema,
@@ -610,7 +645,7 @@ const passGetSchema = eventSchema<PassGetEvent>(
   ["player", "firstcontact", "position"],
 );
 
-const passFreeSchema = eventSchema<PassFreeEvent>(
+const passFreeSchema = eventSchema<RawPassFreeEvent>(
   "passFree",
   {
     player: playerSchema,
@@ -619,7 +654,7 @@ const passFreeSchema = eventSchema<PassFreeEvent>(
   ["player", "position"],
 );
 
-const passPassCaughtSchema = eventSchema<PassPassCaughtEvent>(
+const passPassCaughtSchema = eventSchema<RawPassPassCaughtEvent>(
   "passPassCaught",
   {
     player: playerSchema,
@@ -645,7 +680,7 @@ const passPassCaughtSchema = eventSchema<PassPassCaughtEvent>(
   ],
 );
 
-const passScoreSchema = eventSchema<PassScoreEvent>(
+const passScoreSchema = eventSchema<RawPassScoreEvent>(
   "passScore",
   {
     player: playerSchema,
@@ -659,7 +694,7 @@ const passScoreSchema = eventSchema<PassScoreEvent>(
   ["player", "points", "panacea", "winStrat", "deathbomb", "dist", "position"],
 );
 
-const passScoreAssistSchema = eventSchema<PassScoreAssistEvent>(
+const passScoreAssistSchema = eventSchema<RawPassScoreAssistEvent>(
   "passScoreAssist",
   {
     player: playerSchema,
@@ -668,7 +703,7 @@ const passScoreAssistSchema = eventSchema<PassScoreAssistEvent>(
   ["player", "position"],
 );
 
-const passBallStolenSchema = eventSchema<PassBallStolenEvent>(
+const passBallStolenSchema = eventSchema<RawPassBallStolenEvent>(
   "passBallStolen",
   {
     player: playerSchema,
@@ -680,7 +715,7 @@ const passBallStolenSchema = eventSchema<PassBallStolenEvent>(
   ["player", "victim", "stealDefense", "thiefPosition", "victimPosition"],
 );
 
-const catapultSchema = eventSchema<CatapultEvent>(
+const catapultSchema = eventSchema<RawCatapultEvent>(
   "catapult",
   {
     player: playerSchema,
@@ -690,7 +725,7 @@ const catapultSchema = eventSchema<CatapultEvent>(
   ["player", "catapult", "position"],
 );
 
-const passtimeBallSpawnedSchema = eventSchema<PasstimeBallSpawnedEvent>(
+const passtimeBallSpawnedSchema = eventSchema<RawPasstimeBallSpawnedEvent>(
   "passtimeBallSpawned",
   {
     location: { type: T },
@@ -698,7 +733,7 @@ const passtimeBallSpawnedSchema = eventSchema<PasstimeBallSpawnedEvent>(
   ["location"],
 );
 
-const passtimeBallDamageSchema = eventSchema<PasstimeBallDamageEvent>(
+const passtimeBallDamageSchema = eventSchema<RawPasstimeBallDamageEvent>(
   "passtimeBallDamage",
   {
     details: { type: T },
@@ -706,7 +741,7 @@ const passtimeBallDamageSchema = eventSchema<PasstimeBallDamageEvent>(
   ["details"],
 );
 
-const panaceaCheckSchema = eventSchema<PanaceaCheckEvent>(
+const panaceaCheckSchema = eventSchema<RawPanaceaCheckEvent>(
   "panaceaCheck",
   {
     details: { type: T },
@@ -716,15 +751,16 @@ const panaceaCheckSchema = eventSchema<PanaceaCheckEvent>(
 
 // ─── System / plugin events ──────────────────────────────
 
-const demosTfSchema = eventSchema<DemosTfEvent>(
-  "demosTf",
+const serverPluginMessageSchema = eventSchema<RawServerPluginMessageEvent>(
+  "serverPluginMessage",
   {
+    plugin: { type: T },
     message: { type: T },
   },
-  ["message"],
+  ["plugin", "message"],
 );
 
-const printingForClientSchema = eventSchema<PrintingForClientEvent>(
+const printingForClientSchema = eventSchema<RawPrintingForClientEvent>(
   "printingForClient",
   {
     client: { type: I },
@@ -734,7 +770,7 @@ const printingForClientSchema = eventSchema<PrintingForClientEvent>(
 
 // ─── Spawn / name variants ───────────────────────────────
 
-const spawnedMFilterSchema = eventSchema<SpawnedMFilterEvent>(
+const spawnedMFilterSchema = eventSchema<RawSpawnedMFilterEvent>(
   "spawnedMFilter",
   {
     player: playerSchema,
@@ -743,7 +779,7 @@ const spawnedMFilterSchema = eventSchema<SpawnedMFilterEvent>(
   ["player"],
 );
 
-const chargedMFilterSchema = eventSchema<ChargedMFilterEvent>(
+const chargedMFilterSchema = eventSchema<RawChargedMFilterEvent>(
   "chargedMFilter",
   {
     player: playerSchema,
@@ -754,7 +790,7 @@ const chargedMFilterSchema = eventSchema<ChargedMFilterEvent>(
 
 // ─── Meta ────────────────────────────────────────────────
 
-const metaSchema = eventSchema<MetaEvent>(
+const metaSchema = eventSchema<RawMetaEvent>(
   "meta",
   {
     label: { type: T },
@@ -768,7 +804,7 @@ const metaSchema = eventSchema<MetaEvent>(
 
 // ─── Fallback ────────────────────────────────────────────
 
-const unknownSchema = eventSchema<UnknownEvent>(
+const unknownSchema = eventSchema<RawUnknownEvent>(
   "unknown",
   {
     body: { type: T },
@@ -797,6 +833,7 @@ const tfLogEventSchema = {
     roundWinSchema,
     roundLengthSchema,
     roundOvertimeSchema,
+    roundStalemateSchema,
     gameOverSchema,
     emptyUberSchema,
     healedSchema,
@@ -809,7 +846,6 @@ const tfLogEventSchema = {
     finalScoreSchema,
     suicideSchema,
     positionReportSchema,
-    demosTfSchema,
     chargeReadySchema,
     chargeDeployedSchema,
     chargeEndedSchema,
@@ -826,6 +862,10 @@ const tfLogEventSchema = {
     joinedTeamSchema,
     connectedSchema,
     enteredGameSchema,
+    disconnectedSchema,
+    steamUserIdValidatedSchema,
+    serverPluginMessageSchema,
+    worldMetaDataSchema,
     matchPauseSchema,
     matchUnpauseSchema,
     gamePausedSchema,
@@ -851,4 +891,5 @@ const tfLogEventSchema = {
   ],
 };
 
-export const validateTfLogEvent = ajv.compile<TfLogEvent>(tfLogEventSchema);
+export const validateRawTfLogEvent =
+  ajv.compile<RawTfLogEvent>(tfLogEventSchema);

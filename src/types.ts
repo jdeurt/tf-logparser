@@ -5,18 +5,18 @@ export interface Player {
   team: string;
 }
 
-export interface BaseEvent {
+export interface RawBaseEvent {
   timestamp: number;
-  raw: string;
+  lineNumber: number;
 }
 
-export interface ChangedRoleEvent extends BaseEvent {
+export interface RawChangedRoleEvent extends RawBaseEvent {
   type: "changedRole";
   player: Player;
   role: string;
 }
 
-export interface DamageEvent extends BaseEvent {
+export interface RawDamageEvent extends RawBaseEvent {
   type: "damage";
   player: Player;
   victim: Player;
@@ -30,26 +30,26 @@ export interface DamageEvent extends BaseEvent {
   healing?: number;
 }
 
-export interface ShotFiredEvent extends BaseEvent {
+export interface RawShotFiredEvent extends RawBaseEvent {
   type: "shotFired";
   player: Player;
   weapon: string;
 }
 
-export interface ShotHitEvent extends BaseEvent {
+export interface RawShotHitEvent extends RawBaseEvent {
   type: "shotHit";
   player: Player;
   weapon: string;
 }
 
-export interface PickedUpItemEvent extends BaseEvent {
+export interface RawPickedUpItemEvent extends RawBaseEvent {
   type: "pickedUpItem";
   player: Player;
   item: string;
   healing?: number;
 }
 
-export interface KillEvent extends BaseEvent {
+export interface RawKillEvent extends RawBaseEvent {
   type: "kill";
   player: Player;
   victim: Player;
@@ -59,7 +59,7 @@ export interface KillEvent extends BaseEvent {
   victimPosition: string;
 }
 
-export interface MedicDeathEvent extends BaseEvent {
+export interface RawMedicDeathEvent extends RawBaseEvent {
   type: "medicDeath";
   player: Player;
   victim: Player;
@@ -67,55 +67,59 @@ export interface MedicDeathEvent extends BaseEvent {
   ubercharge: number;
 }
 
-export interface MedicDeathExEvent extends BaseEvent {
+export interface RawMedicDeathExEvent extends RawBaseEvent {
   type: "medicDeathEx";
   player: Player;
   uberpct: number;
 }
 
-export interface SpawnedEvent extends BaseEvent {
+export interface RawSpawnedEvent extends RawBaseEvent {
   type: "spawned";
   player: Player;
   role: string;
 }
 
-export interface RoundStartEvent extends BaseEvent {
+export interface RawRoundStartEvent extends RawBaseEvent {
   type: "roundStart";
 }
 
-export interface RoundSetupBeginEvent extends BaseEvent {
+export interface RawRoundSetupBeginEvent extends RawBaseEvent {
   type: "roundSetupBegin";
 }
 
-export interface RoundSetupEndEvent extends BaseEvent {
+export interface RawRoundSetupEndEvent extends RawBaseEvent {
   type: "roundSetupEnd";
 }
 
-export interface RoundWinEvent extends BaseEvent {
+export interface RawRoundWinEvent extends RawBaseEvent {
   type: "roundWin";
   winner: string;
 }
 
-export interface RoundLengthEvent extends BaseEvent {
+export interface RawRoundLengthEvent extends RawBaseEvent {
   type: "roundLength";
   seconds: number;
 }
 
-export interface RoundOvertimeEvent extends BaseEvent {
+export interface RawRoundOvertimeEvent extends RawBaseEvent {
   type: "roundOvertime";
 }
 
-export interface GameOverEvent extends BaseEvent {
+export interface RawRoundStalemateEvent extends RawBaseEvent {
+  type: "roundStalemate";
+}
+
+export interface RawGameOverEvent extends RawBaseEvent {
   type: "gameOver";
   reason: string;
 }
 
-export interface EmptyUberEvent extends BaseEvent {
+export interface RawEmptyUberEvent extends RawBaseEvent {
   type: "emptyUber";
   player: Player;
 }
 
-export interface HealedEvent extends BaseEvent {
+export interface RawHealedEvent extends RawBaseEvent {
   type: "healed";
   player: Player;
   target: Player;
@@ -124,19 +128,19 @@ export interface HealedEvent extends BaseEvent {
   height?: number;
 }
 
-export interface SayEvent extends BaseEvent {
+export interface RawSayEvent extends RawBaseEvent {
   type: "say";
   player: Player;
   message: string;
 }
 
-export interface SayTeamEvent extends BaseEvent {
+export interface RawSayTeamEvent extends RawBaseEvent {
   type: "sayTeam";
   player: Player;
   message: string;
 }
 
-export interface KillAssistEvent extends BaseEvent {
+export interface RawKillAssistEvent extends RawBaseEvent {
   type: "killAssist";
   player: Player;
   victim: Player;
@@ -145,14 +149,14 @@ export interface KillAssistEvent extends BaseEvent {
   victimPosition: string;
 }
 
-export interface PlayerBuiltObjectEvent extends BaseEvent {
+export interface RawPlayerBuiltObjectEvent extends RawBaseEvent {
   type: "playerBuiltObject";
   player: Player;
   object: string;
   position: string;
 }
 
-export interface PointCapturedEvent extends BaseEvent {
+export interface RawPointCapturedEvent extends RawBaseEvent {
   type: "pointCaptured";
   team: string;
   cp: number;
@@ -161,76 +165,71 @@ export interface PointCapturedEvent extends BaseEvent {
   players: { player: string; position: string }[];
 }
 
-export interface CurrentScoreEvent extends BaseEvent {
+export interface RawCurrentScoreEvent extends RawBaseEvent {
   type: "currentScore";
   team: string;
   score: number;
   numPlayers: number;
 }
 
-export interface FinalScoreEvent extends BaseEvent {
+export interface RawFinalScoreEvent extends RawBaseEvent {
   type: "finalScore";
   team: string;
   score: number;
   numPlayers: number;
 }
 
-export interface SuicideEvent extends BaseEvent {
+export interface RawSuicideEvent extends RawBaseEvent {
   type: "suicide";
   player: Player;
   weapon: string;
   attackerPosition: string;
 }
 
-export interface PositionReportEvent extends BaseEvent {
+export interface RawPositionReportEvent extends RawBaseEvent {
   type: "positionReport";
   player: Player;
   position: string;
 }
 
-export interface DemosTfEvent extends BaseEvent {
-  type: "demosTf";
-  message: string;
-}
-
-export interface ChargeReadyEvent extends BaseEvent {
+export interface RawChargeReadyEvent extends RawBaseEvent {
   type: "chargeReady";
   player: Player;
 }
 
-export interface ChargeDeployedEvent extends BaseEvent {
+export interface RawChargeDeployedEvent extends RawBaseEvent {
   type: "chargeDeployed";
   player: Player;
   medigun: string;
 }
 
-export interface ChargeEndedEvent extends BaseEvent {
+export interface RawChargeEndedEvent extends RawBaseEvent {
   type: "chargeEnded";
   player: Player;
   duration: number;
 }
 
-export interface FirstHealAfterSpawnEvent extends BaseEvent {
+export interface RawFirstHealAfterSpawnEvent extends RawBaseEvent {
   type: "firstHealAfterSpawn";
   player: Player;
   time: number;
 }
 
-export interface DominationEvent extends BaseEvent {
+export interface RawDominationEvent extends RawBaseEvent {
   type: "domination";
   player: Player;
   victim: Player;
   assist?: boolean;
 }
 
-export interface RevengeEvent extends BaseEvent {
+export interface RawRevengeEvent extends RawBaseEvent {
   type: "revenge";
   player: Player;
   victim: Player;
   assist?: boolean;
 }
 
-export interface CaptureBlockedEvent extends BaseEvent {
+export interface RawCaptureBlockedEvent extends RawBaseEvent {
   type: "captureBlocked";
   player: Player;
   cp: number;
@@ -238,39 +237,39 @@ export interface CaptureBlockedEvent extends BaseEvent {
   position: string;
 }
 
-export interface KilledObjectEvent extends BaseEvent {
+export interface RawKilledObjectEvent extends RawBaseEvent {
   type: "killedObject";
   player: Player;
   object: string;
-  weapon: string;
+  weapon?: string;
   objectowner: string;
   attackerPosition: string;
   assist?: boolean;
   assisterPosition?: string;
 }
 
-export interface ObjectDetonatedEvent extends BaseEvent {
+export interface RawObjectDetonatedEvent extends RawBaseEvent {
   type: "objectDetonated";
   player: Player;
   object: string;
   position: string;
 }
 
-export interface PlayerCarryObjectEvent extends BaseEvent {
+export interface RawPlayerCarryObjectEvent extends RawBaseEvent {
   type: "playerCarryObject";
   player: Player;
   object: string;
   position: string;
 }
 
-export interface PlayerDropObjectEvent extends BaseEvent {
+export interface RawPlayerDropObjectEvent extends RawBaseEvent {
   type: "playerDropObject";
   player: Player;
   object: string;
   position: string;
 }
 
-export interface PlayerExtinguishedEvent extends BaseEvent {
+export interface RawPlayerExtinguishedEvent extends RawBaseEvent {
   type: "playerExtinguished";
   player: Player;
   victim: Player;
@@ -279,70 +278,93 @@ export interface PlayerExtinguishedEvent extends BaseEvent {
   victimPosition: string;
 }
 
-export interface LostUberAdvantageEvent extends BaseEvent {
+export interface RawLostUberAdvantageEvent extends RawBaseEvent {
   type: "lostUberAdvantage";
   player: Player;
   time: number;
 }
 
-export interface JoinedTeamEvent extends BaseEvent {
+export interface RawJoinedTeamEvent extends RawBaseEvent {
   type: "joinedTeam";
   player: Player;
   newTeam: string;
 }
 
-export interface ConnectedEvent extends BaseEvent {
+export interface RawConnectedEvent extends RawBaseEvent {
   type: "connected";
   player: Player;
   address: string;
 }
 
-export interface EnteredGameEvent extends BaseEvent {
+export interface RawEnteredGameEvent extends RawBaseEvent {
   type: "enteredGame";
   player: Player;
 }
 
+export interface RawDisconnectedEvent extends RawBaseEvent {
+  type: "disconnected";
+  player: Player;
+  reason: string;
+}
+
+export interface RawSteamUserIdValidatedEvent extends RawBaseEvent {
+  type: "steamUserIdValidated";
+  player: Player;
+}
+
+export interface RawServerPluginMessageEvent extends RawBaseEvent {
+  type: "serverPluginMessage";
+  plugin: string;
+  message: string;
+}
+
+export interface RawWorldMetaDataEvent extends RawBaseEvent {
+  type: "worldMetaData";
+  key: string;
+  value: string;
+}
+
 // ─── Pause events ─────────────────────────────────────────
 
-export interface MatchPauseEvent extends BaseEvent {
+export interface RawMatchPauseEvent extends RawBaseEvent {
   type: "matchPause";
   player: Player;
 }
 
-export interface MatchUnpauseEvent extends BaseEvent {
+export interface RawMatchUnpauseEvent extends RawBaseEvent {
   type: "matchUnpause";
   player: Player;
 }
 
-export interface GamePausedEvent extends BaseEvent {
+export interface RawGamePausedEvent extends RawBaseEvent {
   type: "gamePaused";
 }
 
-export interface GameUnpausedEvent extends BaseEvent {
+export interface RawGameUnpausedEvent extends RawBaseEvent {
   type: "gameUnpaused";
 }
 
-export interface PauseLengthEvent extends BaseEvent {
+export interface RawPauseLengthEvent extends RawBaseEvent {
   type: "pauseLength";
   seconds: number;
 }
 
 // ─── Passtime events ──────────────────────────────────────
 
-export interface PassGetEvent extends BaseEvent {
+export interface RawPassGetEvent extends RawBaseEvent {
   type: "passGet";
   player: Player;
   firstcontact: boolean;
   position: string;
 }
 
-export interface PassFreeEvent extends BaseEvent {
+export interface RawPassFreeEvent extends RawBaseEvent {
   type: "passFree";
   player: Player;
   position: string;
 }
 
-export interface PassPassCaughtEvent extends BaseEvent {
+export interface RawPassPassCaughtEvent extends RawBaseEvent {
   type: "passPassCaught";
   player: Player;
   target: Player;
@@ -355,7 +377,7 @@ export interface PassPassCaughtEvent extends BaseEvent {
   catcherPosition: string;
 }
 
-export interface PassScoreEvent extends BaseEvent {
+export interface RawPassScoreEvent extends RawBaseEvent {
   type: "passScore";
   player: Player;
   points: number;
@@ -366,13 +388,13 @@ export interface PassScoreEvent extends BaseEvent {
   position: string;
 }
 
-export interface PassScoreAssistEvent extends BaseEvent {
+export interface RawPassScoreAssistEvent extends RawBaseEvent {
   type: "passScoreAssist";
   player: Player;
   position: string;
 }
 
-export interface PassBallStolenEvent extends BaseEvent {
+export interface RawPassBallStolenEvent extends RawBaseEvent {
   type: "passBallStolen";
   player: Player;
   victim: Player;
@@ -381,133 +403,137 @@ export interface PassBallStolenEvent extends BaseEvent {
   victimPosition: string;
 }
 
-export interface CatapultEvent extends BaseEvent {
+export interface RawCatapultEvent extends RawBaseEvent {
   type: "catapult";
   player: Player;
   catapult: string;
   position: string;
 }
 
-export interface PasstimeBallSpawnedEvent extends BaseEvent {
+export interface RawPasstimeBallSpawnedEvent extends RawBaseEvent {
   type: "passtimeBallSpawned";
   location: string;
 }
 
-export interface PasstimeBallDamageEvent extends BaseEvent {
+export interface RawPasstimeBallDamageEvent extends RawBaseEvent {
   type: "passtimeBallDamage";
   details: string;
 }
 
-export interface PanaceaCheckEvent extends BaseEvent {
+export interface RawPanaceaCheckEvent extends RawBaseEvent {
   type: "panaceaCheck";
   details: string;
 }
 
-export interface PrintingForClientEvent extends BaseEvent {
+export interface RawPrintingForClientEvent extends RawBaseEvent {
   type: "printingForClient";
   client: number;
 }
 
 // ─── Spawn / name variants ────────────────────────────────
 
-export interface SpawnedMFilterEvent extends BaseEvent {
+export interface RawSpawnedMFilterEvent extends RawBaseEvent {
   type: "spawnedMFilter";
   player: Player;
   role?: string;
 }
 
-export interface ChargedMFilterEvent extends BaseEvent {
+export interface RawChargedMFilterEvent extends RawBaseEvent {
   type: "chargedMFilter";
   player: Player;
   role: string;
 }
 
-export interface ChangedNameEvent extends BaseEvent {
+export interface RawChangedNameEvent extends RawBaseEvent {
   type: "changedName";
   player: Player;
   newName: string;
 }
 
-export interface IntermissionWinLimitEvent extends BaseEvent {
+export interface RawIntermissionWinLimitEvent extends RawBaseEvent {
   type: "intermissionWinLimit";
   team: string;
 }
 
-export interface MetaEvent extends BaseEvent {
+export interface RawMetaEvent extends RawBaseEvent {
   type: "meta";
   label: string;
   kvs: Record<string, string>;
 }
 
-export interface UnknownEvent extends BaseEvent {
+export interface RawUnknownEvent extends RawBaseEvent {
   type: "unknown";
   body: string;
 }
 
-export type TfLogEvent =
-  | ChangedRoleEvent
-  | DamageEvent
-  | ShotFiredEvent
-  | ShotHitEvent
-  | PickedUpItemEvent
-  | KillEvent
-  | MedicDeathEvent
-  | MedicDeathExEvent
-  | SpawnedEvent
-  | RoundStartEvent
-  | RoundSetupBeginEvent
-  | RoundSetupEndEvent
-  | RoundWinEvent
-  | RoundLengthEvent
-  | RoundOvertimeEvent
-  | GameOverEvent
-  | EmptyUberEvent
-  | HealedEvent
-  | SayEvent
-  | SayTeamEvent
-  | KillAssistEvent
-  | PlayerBuiltObjectEvent
-  | PointCapturedEvent
-  | CurrentScoreEvent
-  | FinalScoreEvent
-  | SuicideEvent
-  | PositionReportEvent
-  | DemosTfEvent
-  | ChargeReadyEvent
-  | ChargeDeployedEvent
-  | ChargeEndedEvent
-  | FirstHealAfterSpawnEvent
-  | DominationEvent
-  | RevengeEvent
-  | CaptureBlockedEvent
-  | KilledObjectEvent
-  | ObjectDetonatedEvent
-  | PlayerCarryObjectEvent
-  | PlayerDropObjectEvent
-  | PlayerExtinguishedEvent
-  | LostUberAdvantageEvent
-  | JoinedTeamEvent
-  | ConnectedEvent
-  | EnteredGameEvent
-  | MatchPauseEvent
-  | MatchUnpauseEvent
-  | GamePausedEvent
-  | GameUnpausedEvent
-  | PauseLengthEvent
-  | PassGetEvent
-  | PassFreeEvent
-  | PassPassCaughtEvent
-  | PassScoreEvent
-  | PassScoreAssistEvent
-  | PassBallStolenEvent
-  | CatapultEvent
-  | PasstimeBallSpawnedEvent
-  | PasstimeBallDamageEvent
-  | PanaceaCheckEvent
-  | PrintingForClientEvent
-  | SpawnedMFilterEvent
-  | ChargedMFilterEvent
-  | ChangedNameEvent
-  | IntermissionWinLimitEvent
-  | MetaEvent
-  | UnknownEvent;
+export type RawTfLogEvent =
+  | RawChangedRoleEvent
+  | RawDamageEvent
+  | RawShotFiredEvent
+  | RawShotHitEvent
+  | RawPickedUpItemEvent
+  | RawKillEvent
+  | RawMedicDeathEvent
+  | RawMedicDeathExEvent
+  | RawSpawnedEvent
+  | RawRoundStartEvent
+  | RawRoundSetupBeginEvent
+  | RawRoundSetupEndEvent
+  | RawRoundWinEvent
+  | RawRoundLengthEvent
+  | RawRoundOvertimeEvent
+  | RawRoundStalemateEvent
+  | RawGameOverEvent
+  | RawEmptyUberEvent
+  | RawHealedEvent
+  | RawSayEvent
+  | RawSayTeamEvent
+  | RawKillAssistEvent
+  | RawPlayerBuiltObjectEvent
+  | RawPointCapturedEvent
+  | RawCurrentScoreEvent
+  | RawFinalScoreEvent
+  | RawSuicideEvent
+  | RawPositionReportEvent
+  | RawChargeReadyEvent
+  | RawChargeDeployedEvent
+  | RawChargeEndedEvent
+  | RawFirstHealAfterSpawnEvent
+  | RawDominationEvent
+  | RawRevengeEvent
+  | RawCaptureBlockedEvent
+  | RawKilledObjectEvent
+  | RawObjectDetonatedEvent
+  | RawPlayerCarryObjectEvent
+  | RawPlayerDropObjectEvent
+  | RawPlayerExtinguishedEvent
+  | RawLostUberAdvantageEvent
+  | RawJoinedTeamEvent
+  | RawConnectedEvent
+  | RawEnteredGameEvent
+  | RawDisconnectedEvent
+  | RawSteamUserIdValidatedEvent
+  | RawServerPluginMessageEvent
+  | RawWorldMetaDataEvent
+  | RawMatchPauseEvent
+  | RawMatchUnpauseEvent
+  | RawGamePausedEvent
+  | RawGameUnpausedEvent
+  | RawPauseLengthEvent
+  | RawPassGetEvent
+  | RawPassFreeEvent
+  | RawPassPassCaughtEvent
+  | RawPassScoreEvent
+  | RawPassScoreAssistEvent
+  | RawPassBallStolenEvent
+  | RawCatapultEvent
+  | RawPasstimeBallSpawnedEvent
+  | RawPasstimeBallDamageEvent
+  | RawPanaceaCheckEvent
+  | RawPrintingForClientEvent
+  | RawSpawnedMFilterEvent
+  | RawChargedMFilterEvent
+  | RawChangedNameEvent
+  | RawIntermissionWinLimitEvent
+  | RawMetaEvent
+  | RawUnknownEvent;

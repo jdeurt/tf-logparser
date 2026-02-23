@@ -1,20 +1,25 @@
-import type { TfLogEvent } from "./types.js";
+import type { RawTfLogEvent } from "./types.js";
 import { parse } from "./generated/tf2-parser.js";
 
-export function parseLog(rawText: string): TfLogEvent[] {
+export function parseLog(rawText: string): RawTfLogEvent[] {
   const lines = rawText.split("\n").filter((line) => line.length > 0);
-  return lines.map((line) => {
+  const events: RawTfLogEvent[] = [];
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i] as string;
     try {
-      return parse(line) as TfLogEvent;
+      const event = parse(line) as RawTfLogEvent;
+      event.lineNumber = i + 1;
+      events.push(event);
     } catch {
-      return {
+      events.push({
         type: "unknown" as const,
         timestamp: Date.now(),
-        raw: line,
+        lineNumber: i + 1,
         body: line,
-      };
+      });
     }
-  });
+  }
+  return events;
 }
 
 export function combineLogs(logs: string[]): string {

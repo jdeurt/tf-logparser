@@ -10,7 +10,7 @@
 
 Line
   = timestamp:Timestamp " " event:Event
-    { return { timestamp, raw: input, ...event }; }
+    { return { timestamp, ...event }; }
 
 Timestamp
   = "L "

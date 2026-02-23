@@ -1,4 +1,4 @@
-import type { TfLogEvent } from "../types.js";
+import type { RawTfLogEvent } from "../types.js";
 
 export interface TeamColorPeriod {
   color: "Red" | "Blue";
@@ -17,7 +17,7 @@ function isTeamColor(value: string): value is TeamColor {
 }
 
 /** Return the player's effective color from an event, or null. */
-function getEventPlayerColor(event: TfLogEvent): TeamColor | null {
+function getEventPlayerColor(event: RawTfLogEvent): TeamColor | null {
   if (event.type === "joinedTeam") {
     return isTeamColor(event.newTeam) ? event.newTeam : null;
   }
@@ -27,7 +27,7 @@ function getEventPlayerColor(event: TfLogEvent): TeamColor | null {
   return null;
 }
 
-function getEventPlayerSteamId(event: TfLogEvent): string | null {
+function getEventPlayerSteamId(event: RawTfLogEvent): string | null {
   if ("player" in event) {
     return event.player.steamId;
   }
@@ -39,13 +39,13 @@ function getEventPlayerSteamId(event: TfLogEvent): string | null {
  * A swap is a batch of JoinedTeamEvents at the same timestamp after a
  * RoundWinEvent, where multiple players switch between Red and Blue.
  */
-function detectSwaps(events: TfLogEvent[]): number[] {
+function detectSwaps(events: RawTfLogEvent[]): number[] {
   const swaps: number[] = [];
   let sawRoundWin = false;
   let processedBatchTs: number | null = null;
 
   for (let i = 0; i < events.length; i++) {
-    const event = events[i] as TfLogEvent;
+    const event = events[i] as RawTfLogEvent;
 
     if (event.type === "roundWin") {
       sawRoundWin = true;
@@ -60,7 +60,7 @@ function detectSwaps(events: TfLogEvent[]): number[] {
       let switchCount = 0;
 
       for (let j = i; j < events.length; j++) {
-        const e = events[j] as TfLogEvent;
+        const e = events[j] as RawTfLogEvent;
         if (e.timestamp !== batchTs) break;
         if (e.type === "joinedTeam") {
           if (
@@ -91,7 +91,7 @@ function detectSwaps(events: TfLogEvent[]): number[] {
  * detects those swaps and groups players into stable teams, tracking each
  * team's color assignment periods.
  */
-export function groupTeams(events: TfLogEvent[]): TeamInfo[] {
+export function groupTeams(events: RawTfLogEvent[]): TeamInfo[] {
   const swapTimestamps = detectSwaps(events);
 
   const redTeam = new Set<string>();
@@ -127,7 +127,7 @@ export function groupTeams(events: TfLogEvent[]): TeamInfo[] {
     }
   }
 
-  const firstTs = events.length > 0 ? (events[0] as TfLogEvent).timestamp : 0;
+  const firstTs = events.length > 0 ? (events[0] as RawTfLogEvent).timestamp : 0;
   const result: TeamInfo[] = [];
 
   for (const [initialColor, steamIds] of [
