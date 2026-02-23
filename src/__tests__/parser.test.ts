@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { readFileSync } from "fs";
-import { join } from "path";
+import { readFileSync, readdirSync } from "fs";
+import { join, relative } from "path";
 import { parseLog } from "../parser.js";
 
 const fixturesDir = join(__dirname, "../../fixtures");
@@ -13,13 +13,21 @@ function nonEmptyLineCount(text: string): number {
   return text.split("\n").filter((line) => line.length > 0).length;
 }
 
-describe.each([
-  "cp.log",
-  "koth.log",
-  "payload.log",
-  "passtime.log",
-  "ultiduo.log",
-])("%s", (fixture) => {
+function findLogs(dir: string): string[] {
+  const results: string[] = [];
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    if (entry.isDirectory()) {
+      results.push(...findLogs(join(dir, entry.name)));
+    } else if (entry.name.endsWith(".log")) {
+      results.push(relative(fixturesDir, join(dir, entry.name)));
+    }
+  }
+  return results.sort();
+}
+
+const fixtures = findLogs(fixturesDir);
+
+describe.each(fixtures)("%s", (fixture) => {
   const raw = loadFixture(fixture);
   const events = parseLog(raw);
 

@@ -59,123 +59,128 @@ The parser recognizes the following events. Any line that doesn't match a known 
 
 #### Combat
 
-| Type                 | Description                                                                                                                            |
-| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `damage`             | Player damaged another player. Includes damage, realdamage, weapon, and optional crit/mini, headshot, airshot, height, healing fields. |
-| `kill`               | Player killed another player. Includes weapon, optional customkill, and attacker/victim positions.                                     |
-| `killAssist`         | Player assisted a kill. Includes assister, attacker, and victim positions.                                                             |
-| `suicide`            | Player killed themselves. Includes weapon and position.                                                                                |
-| `medicDeath`         | Medic was killed. Includes healing given and ubercharge percentage lost.                                                               |
-| `medicDeathEx`       | Extended medic death info with uber percentage.                                                                                        |
-| `playerExtinguished` | Player extinguished a burning teammate.                                                                                                |
-| `shotFired`          | Player fired a weapon.                                                                                                                 |
-| `shotHit`            | Player's shot hit a target.                                                                                                            |
+| Type                 | Attributes                                                                                                     | Description                             |
+| -------------------- | -------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
+| `damage`             | `player`, `victim`, `damage`, `weapon`, `realdamage?`, `crit?`, `headshot?`, `airshot?`, `height?`, `healing?` | Player damaged another player.          |
+| `kill`               | `player`, `victim`, `weapon`, `attackerPosition`, `victimPosition`, `customkill?`                              | Player killed another player.           |
+| `killAssist`         | `player`, `victim`, `assisterPosition`, `attackerPosition`, `victimPosition`                                   | Player assisted a kill.                 |
+| `suicide`            | `player`, `weapon`, `attackerPosition`                                                                         | Player killed themselves.               |
+| `medicDeath`         | `player`, `victim`, `healing`, `ubercharge`                                                                    | Medic was killed.                       |
+| `medicDeathEx`       | `player`, `uberpct`                                                                                            | Extended medic death info.              |
+| `playerExtinguished` | `player`, `victim`, `weapon`, `attackerPosition`, `victimPosition`                                             | Player extinguished a burning teammate. |
+| `shotFired`          | `player`, `weapon`                                                                                             | Player fired a weapon.                  |
+| `shotHit`            | `player`, `weapon`                                                                                             | Player's shot hit a target.             |
 
 #### Healing & Ubercharge
 
-| Type                  | Description                                                                  |
-| --------------------- | ---------------------------------------------------------------------------- |
-| `healed`              | Medic healed a target. Includes healing amount, optional airshot and height. |
-| `chargeReady`         | Medigun charge is ready.                                                     |
-| `chargeDeployed`      | Ubercharge deployed. Includes medigun type.                                  |
-| `chargeEnded`         | Ubercharge ended. Includes duration in seconds.                              |
-| `emptyUber`           | Ubercharge fully depleted.                                                   |
-| `firstHealAfterSpawn` | Time of first heal after medic spawned.                                      |
-| `lostUberAdvantage`   | Medic lost uber advantage. Includes time in seconds.                         |
+| Type                  | Attributes                                           | Description                             |
+| --------------------- | ---------------------------------------------------- | --------------------------------------- |
+| `healed`              | `player`, `target`, `healing`, `airshot?`, `height?` | Medic healed a target.                  |
+| `chargeReady`         | `player`                                             | Medigun charge is ready.                |
+| `chargeDeployed`      | `player`, `medigun`                                  | Ubercharge deployed.                    |
+| `chargeEnded`         | `player`, `duration`                                 | Ubercharge ended.                       |
+| `emptyUber`           | `player`                                             | Ubercharge fully depleted.              |
+| `firstHealAfterSpawn` | `player`, `time`                                     | Time of first heal after medic spawned. |
+| `lostUberAdvantage`   | `player`, `time`                                     | Medic lost uber advantage.              |
 
 #### Objectives
 
-| Type             | Description                                                                                          |
-| ---------------- | ---------------------------------------------------------------------------------------------------- |
-| `pointCaptured`  | Team captured a control point. Includes cp index, name, number of cappers, and per-player positions. |
-| `captureBlocked` | Player blocked a capture. Includes cp index, name, and position.                                     |
+| Type             | Attributes                                        | Description                    |
+| ---------------- | ------------------------------------------------- | ------------------------------ |
+| `pointCaptured`  | `team`, `cp`, `cpname`, `numcappers`, `players[]` | Team captured a control point. |
+| `captureBlocked` | `player`, `cp`, `cpname`, `position`              | Player blocked a capture.      |
 
 #### Buildings & Objects
 
-| Type                | Description                                                                      |
-| ------------------- | -------------------------------------------------------------------------------- |
-| `playerBuiltObject` | Player built an object (sentry, dispenser, etc).                                 |
-| `killedObject`      | Player destroyed an object. Includes weapon, object owner, optional assist info. |
-| `objectDetonated`   | Player detonated their own object.                                               |
-| `playerCarryObject` | Player picked up their building.                                                 |
-| `playerDropObject`  | Player dropped their building.                                                   |
+| Type                | Attributes                                                                                      | Description                        |
+| ------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------- |
+| `playerBuiltObject` | `player`, `object`, `position`                                                                  | Player built an object.            |
+| `killedObject`      | `player`, `object`, `weapon`, `objectowner`, `attackerPosition`, `assist?`, `assisterPosition?` | Player destroyed an object.        |
+| `objectDetonated`   | `player`, `object`, `position`                                                                  | Player detonated their own object. |
+| `playerCarryObject` | `player`, `object`, `position`                                                                  | Player picked up their building.   |
+| `playerDropObject`  | `player`, `object`, `position`                                                                  | Player dropped their building.     |
 
 #### Round & Game
 
-| Type                   | Description                                      |
-| ---------------------- | ------------------------------------------------ |
-| `roundStart`           | Round started.                                   |
-| `roundSetupBegin`      | Setup phase began.                               |
-| `roundSetupEnd`        | Setup phase ended.                               |
-| `roundWin`             | Round won by a team.                             |
-| `roundLength`          | Round duration in seconds.                       |
-| `roundOvertime`        | Overtime started.                                |
-| `gameOver`             | Game ended with a reason string.                 |
-| `currentScore`         | Mid-game score report (team, score, numPlayers). |
-| `finalScore`           | End-of-game score report.                        |
-| `intermissionWinLimit` | Intermission or win limit reached.               |
+| Type                   | Attributes                    | Description                        |
+| ---------------------- | ----------------------------- | ---------------------------------- |
+| `roundStart`           | —                             | Round started.                     |
+| `roundSetupBegin`      | —                             | Setup phase began.                 |
+| `roundSetupEnd`        | —                             | Setup phase ended.                 |
+| `roundWin`             | `winner`                      | Round won by a team.               |
+| `roundLength`          | `seconds`                     | Round duration in seconds.         |
+| `roundOvertime`        | —                             | Overtime started.                  |
+| `roundStalemate`       | —                             | Round ended in a stalemate.        |
+| `gameOver`             | `reason`                      | Game ended.                        |
+| `currentScore`         | `team`, `score`, `numPlayers` | Mid-game score report.             |
+| `finalScore`           | `team`, `score`, `numPlayers` | End-of-game score report.          |
+| `intermissionWinLimit` | `team`                        | Intermission or win limit reached. |
 
 #### Player State
 
-| Type             | Description                                        |
-| ---------------- | -------------------------------------------------- |
-| `spawned`        | Player spawned as a class/role.                    |
-| `spawnedMFilter` | Player spawned with m_filter (optional role).      |
-| `changedRole`    | Player changed class.                              |
-| `changedName`    | Player changed their name.                         |
-| `chargedMFilter` | Player charged as role with m_filter.              |
-| `pickedUpItem`   | Player picked up an item (optional healing value). |
-| `joinedTeam`     | Player joined a team.                              |
-| `connected`      | Player connected to the server.                    |
-| `enteredGame`    | Player entered the game.                           |
-| `positionReport` | Player position report.                            |
+| Type                   | Attributes                   | Description                           |
+| ---------------------- | ---------------------------- | ------------------------------------- |
+| `spawned`              | `player`, `role`             | Player spawned as a class.            |
+| `spawnedMFilter`       | `player`, `role?`            | Player spawned with m_filter.         |
+| `changedRole`          | `player`, `role`             | Player changed class.                 |
+| `changedName`          | `player`, `newName`          | Player changed their name.            |
+| `chargedMFilter`       | `player`, `role`             | Player charged as role with m_filter. |
+| `pickedUpItem`         | `player`, `item`, `healing?` | Player picked up an item.             |
+| `joinedTeam`           | `player`, `newTeam`          | Player joined a team.                 |
+| `connected`            | `player`, `address`          | Player connected to the server.       |
+| `disconnected`         | `player`, `reason`           | Player disconnected.                  |
+| `steamUserIdValidated` | `player`                     | Player's Steam ID was validated.      |
+| `enteredGame`          | `player`                     | Player entered the game.              |
+| `positionReport`       | `player`, `position`         | Player position report.               |
 
 #### Domination & Revenge
 
-| Type         | Description                                         |
-| ------------ | --------------------------------------------------- |
-| `domination` | Player is dominating another. Optional assist flag. |
-| `revenge`    | Player got revenge. Optional assist flag.           |
+| Type         | Attributes                    | Description                   |
+| ------------ | ----------------------------- | ----------------------------- |
+| `domination` | `player`, `victim`, `assist?` | Player is dominating another. |
+| `revenge`    | `player`, `victim`, `assist?` | Player got revenge.           |
 
 #### Chat
 
-| Type      | Description          |
-| --------- | -------------------- |
-| `say`     | Public chat message. |
-| `sayTeam` | Team chat message.   |
+| Type      | Attributes          | Description          |
+| --------- | ------------------- | -------------------- |
+| `say`     | `player`, `message` | Public chat message. |
+| `sayTeam` | `player`, `message` | Team chat message.   |
 
 #### Pause
 
-| Type           | Description                  |
-| -------------- | ---------------------------- |
-| `matchPause`   | Player triggered a pause.    |
-| `matchUnpause` | Player triggered an unpause. |
-| `gamePaused`   | Game is paused.              |
-| `gameUnpaused` | Game is unpaused.            |
-| `pauseLength`  | Pause duration in seconds.   |
+| Type           | Attributes | Description                  |
+| -------------- | ---------- | ---------------------------- |
+| `matchPause`   | `player`   | Player triggered a pause.    |
+| `matchUnpause` | `player`   | Player triggered an unpause. |
+| `gamePaused`   | —          | Game is paused.              |
+| `gameUnpaused` | —          | Game is unpaused.            |
+| `pauseLength`  | `seconds`  | Pause duration in seconds.   |
 
 #### Passtime
 
-| Type                  | Description                                                                                     |
-| --------------------- | ----------------------------------------------------------------------------------------------- |
-| `passGet`             | Player got the ball. Includes firstcontact flag and position.                                   |
-| `passFree`            | Ball became free.                                                                               |
-| `passPassCaught`      | Pass was caught. Includes interception, save, handoff flags, distance, duration, and positions. |
-| `passScore`           | Player scored. Includes points, panacea, winStrat, deathbomb flags, distance, and position.     |
-| `passScoreAssist`     | Player assisted a score.                                                                        |
-| `passBallStolen`      | Ball was stolen. Includes stealDefense flag and positions.                                      |
-| `catapult`            | Player used a catapult.                                                                         |
-| `passtimeBallSpawned` | Ball spawned at a location.                                                                     |
-| `passtimeBallDamage`  | Ball took damage.                                                                               |
-| `panaceaCheck`        | Panacea check event.                                                                            |
+| Type                  | Attributes                                                                                                      | Description                 |
+| --------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------- |
+| `passGet`             | `player`, `firstcontact`, `position`                                                                            | Player got the ball.        |
+| `passFree`            | `player`, `position`                                                                                            | Ball became free.           |
+| `passPassCaught`      | `player`, `target`, `interception`, `save`, `handoff`, `dist`, `duration`, `throwerPosition`, `catcherPosition` | Pass was caught.            |
+| `passScore`           | `player`, `points`, `panacea`, `winStrat`, `deathbomb`, `dist`, `position`                                      | Player scored.              |
+| `passScoreAssist`     | `player`, `position`                                                                                            | Player assisted a score.    |
+| `passBallStolen`      | `player`, `victim`, `stealDefense`, `thiefPosition`, `victimPosition`                                           | Ball was stolen.            |
+| `catapult`            | `player`, `catapult`, `position`                                                                                | Player used a catapult.     |
+| `passtimeBallSpawned` | `location`                                                                                                      | Ball spawned at a location. |
+| `passtimeBallDamage`  | `details`                                                                                                       | Ball took damage.           |
+| `panaceaCheck`        | `details`                                                                                                       | Panacea check event.        |
 
 #### System
 
-| Type                | Description                       |
-| ------------------- | --------------------------------- |
-| `demosTf`           | Message from the demos.tf plugin. |
-| `printingForClient` | Server printing for a client.     |
-| `unknown`           | Unrecognized log line (fallback). |
+| Type                  | Attributes          | Description                                                           |
+| --------------------- | ------------------- | --------------------------------------------------------------------- |
+| `serverPluginMessage` | `plugin`, `message` | Message from a server plugin (e.g. demos.tf, SteamNetworkingSockets). |
+| `worldMetaData`       | `key`, `value`      | Match metadata (matchid, map, title).                                 |
+| `meta`                | `label`, `kvs`      | Meta comment line (e.g. `# COMBINED_LOG`).                            |
+| `printingForClient`   | `client`            | Server printing for a client.                                         |
+| `unknown`             | `body`              | Unrecognized log line (fallback).                                     |
 
 ## Benchmarks
 

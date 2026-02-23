@@ -77,13 +77,16 @@ Event
   / EnteredGameEvent
   / PointCapturedEvent
   / IntermissionWinLimitEvent
+  / DisconnectedEvent
+  / SteamUserIdValidatedEvent
+  / ServerPluginMessageEvent
+  / WorldMetaDataEvent
   / SimpleWorldEvent
   / RoundWinEvent
   / RoundLengthEvent
   / GameOverEvent
   / PauseLengthEvent
   / ScoreEvent
-  / DemosTfEvent
   / PasstimeBallSpawnedEvent
   / PasstimeBallDamageEvent
   / PanaceaCheckEvent
@@ -573,6 +576,35 @@ IntermissionWinLimitEvent
     "\" triggered \"Intermission_Win_Limit\""
     { return { type: "intermissionWinLimit", team }; }
 
+DisconnectedEvent
+  = player:Player
+    " disconnected (reason \""
+    reason:$[^\"]*
+    "\")"
+    { return { type: "disconnected", player, reason }; }
+
+SteamUserIdValidatedEvent
+  = player:Player
+    " STEAM USERID validated"
+    { return { type: "steamUserIdValidated", player }; }
+
+ServerPluginMessageEvent
+  = "["
+    plugin:$[^\]]+
+    "]"
+    ":"?
+    " "
+    message:$(.+)
+    { return { type: "serverPluginMessage", plugin, message }; }
+
+WorldMetaDataEvent
+  = "World triggered \"meta_data\" ("
+    key:$[a-z_]+
+    " \""
+    value:$[^\"]*
+    "\")"
+    { return { type: "worldMetaData", key, value }; }
+
 SimpleWorldEvent
   = "World triggered \""
     name:$(
@@ -580,6 +612,7 @@ SimpleWorldEvent
       / "Round_Setup_Begin"
       / "Round_Setup_End"
       / "Round_Overtime"
+      / "Round_Stalemate"
       / "Game_Paused"
       / "Game_Unpaused"
     )
@@ -630,10 +663,6 @@ ScoreEvent
       };
     }
 
-DemosTfEvent
-  = "[demos.tf]: "
-    message:$(.+)
-    { return { type: "demosTf", message }; }
 
 PasstimeBallSpawnedEvent
   = "passtime_ball spawned from the "

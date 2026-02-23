@@ -1,0 +1,615 @@
+L 02/23/2026 - 18:56:42: "Jack The Sipper<86><[U:1:252636943]><Blue>" changed role to "soldier"
+L 02/23/2026 - 18:56:42: "rolling<88><[U:1:929381220]><Red>" changed role to "demoman"
+L 02/23/2026 - 18:56:45: [demos.tf]: Demos must be at least 5 minutes long
+L 02/23/2026 - 18:56:47: World triggered "Round_Start"
+L 02/23/2026 - 18:56:47: World triggered "Round_Setup_Begin"
+L 02/23/2026 - 18:56:47: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 18:56:47: "rolling<88><[U:1:929381220]><Red>" spawned as "demoman"
+L 02/23/2026 - 18:56:47: World triggered "Round_Start"
+L 02/23/2026 - 18:56:47: World triggered "Round_Setup_Begin"
+L 02/23/2026 - 18:56:47: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 18:56:47: "rolling<88><[U:1:929381220]><Red>" spawned as "demoman"
+L 02/23/2026 - 18:56:47: "rolling<88><[U:1:929381220]><Red>" spawned with m_filter on
+L 02/23/2026 - 18:56:47: "rolling<88><[U:1:929381220]><Red>" spawned with m_filter on
+L 02/23/2026 - 18:56:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" position_report (position "-346 -1895 0")
+L 02/23/2026 - 18:56:48: "SourceTV<3><BOT><Spectator>" position_report (position "-345 -1960 68")
+L 02/23/2026 - 18:56:48: "rolling<88><[U:1:929381220]><Red>" position_report (position "-352 1896 0")
+L 02/23/2026 - 18:56:48: World triggered "meta_data" (matchid "260223185648S8ZTKVppqDOuzEQpK6pz")
+L 02/23/2026 - 18:56:48: World triggered "meta_data" (map "pass_pball_a33")
+L 02/23/2026 - 18:56:48: World triggered "meta_data" (title "passtime.tf | B pugs: BLU vs RED")
+L 02/23/2026 - 18:56:52: World triggered "Round_Setup_End"
+L 02/23/2026 - 18:56:55: "rolling<88><[U:1:929381220]><Red>" charged as "demoman" with m_filter on
+L 02/23/2026 - 18:56:56: "rolling<88><[U:1:929381220]><Red>" triggered "pass_get" (firstcontact "1") (position "60 42 689")
+L 02/23/2026 - 18:56:58: "rolling<88><[U:1:929381220]><Red>" triggered "pass_free" (position "169 -1456 369")
+L 02/23/2026 - 18:57:00: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_hit" (weapon "quake_rl")
+L 02/23/2026 - 18:57:00: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "damage" against "rolling<88><[U:1:929381220]><Red>" (damage "55") (weapon "quake_rl")
+L 02/23/2026 - 18:57:00: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 18:57:00: "Jack The Sipper<86><[U:1:252636943]><Blue>" killed "rolling<88><[U:1:929381220]><Red>" with "player" (attacker_position "154 -998 199") (victim_position "311 -1263 108")
+L 02/23/2026 - 18:57:00: "rolling<88><[U:1:929381220]><Red>" spawned as "demoman"
+L 02/23/2026 - 18:57:00: "rolling<88><[U:1:929381220]><Red>" spawned with m_filter on
+L 02/23/2026 - 18:57:01: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-111 -392 19")
+L 02/23/2026 - 18:57:02: "rolling<88><[U:1:929381220]><Red>" charged as "demoman" with m_filter on
+L 02/23/2026 - 18:57:04: "rolling<88><[U:1:929381220]><Red>" committed suicide with "world" (attacker_position "-314 462 228")
+L 02/23/2026 - 18:57:04: "rolling<88><[U:1:929381220]><Red>" spawned as "demoman"
+L 02/23/2026 - 18:57:04: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "80 701 69")
+L 02/23/2026 - 18:57:04: "rolling<88><[U:1:929381220]><Red>" spawned with m_filter on
+L 02/23/2026 - 18:57:05: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "98 740 47")
+L 02/23/2026 - 18:57:05: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 18:57:06: "rolling<88><[U:1:929381220]><Red>" triggered "pass_pass_caught" against "Jack The Sipper<86><[U:1:252636943]><Blue>" (interception "1") (save "0") (handoff "0") (dist "65.388") (duration "1.484") (thrower_position "488 1517 67") (catcher_position "423 -1712 0")
+L 02/23/2026 - 18:57:07: "rolling<88><[U:1:929381220]><Red>" triggered "pass_free" (position "379 1337 0")
+L 02/23/2026 - 18:57:08: "rolling<88><[U:1:929381220]><Red>" triggered "pass_get" (firstcontact "0") (position "59 1334 0")
+L 02/23/2026 - 18:57:10: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 18:57:10: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_hit" (weapon "quake_rl")
+L 02/23/2026 - 18:57:10: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "damage" against "rolling<88><[U:1:929381220]><Red>" (damage "76") (weapon "quake_rl") (crit "mini")
+L 02/23/2026 - 18:57:12: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 18:57:12: "rolling<88><[U:1:929381220]><Red>" triggered "pass_free" (position "-255 657 0")
+L 02/23/2026 - 18:57:13: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "145 800 0")
+L 02/23/2026 - 18:57:13: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 18:57:13: "rolling<88><[U:1:929381220]><Red>" charged as "demoman" with m_filter on
+L 02/23/2026 - 18:57:14: "rolling<88><[U:1:929381220]><Red>" triggered "pass_get" (firstcontact "0") (position "91 -310 -17")
+L 02/23/2026 - 18:57:15: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 18:57:17: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 18:57:17: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_hit" (weapon "quake_rl")
+L 02/23/2026 - 18:57:17: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "damage" against "rolling<88><[U:1:929381220]><Red>" (damage "78") (weapon "quake_rl") (crit "mini")
+L 02/23/2026 - 18:57:18: "rolling<88><[U:1:929381220]><Red>" triggered "pass_free" (position "-224 -1624 24")
+L 02/23/2026 - 18:57:19: "Jack The Sipper<86><[U:1:252636943]><Blue>" killed "rolling<88><[U:1:929381220]><Red>" with "player" (attacker_position "-122 -1456 0") (victim_position "-245 -1634 0")
+L 02/23/2026 - 18:57:19: "rolling<88><[U:1:929381220]><Red>" spawned as "demoman"
+L 02/23/2026 - 18:57:19: "rolling<88><[U:1:929381220]><Red>" triggered "blu_catapult2" with the jack (position "-294 1895 0")
+L 02/23/2026 - 18:57:19: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 18:57:19: "rolling<88><[U:1:929381220]><Red>" spawned with m_filter on
+L 02/23/2026 - 18:57:19: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-62 -1395 0")
+L 02/23/2026 - 18:57:19: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 18:57:21: "rolling<88><[U:1:929381220]><Red>" charged as "demoman" with m_filter on
+L 02/23/2026 - 18:57:23: "rolling<88><[U:1:929381220]><Red>" triggered "damage" against "Jack The Sipper<86><[U:1:252636943]><Blue>" (damage "55") (weapon "ullapool_caber")
+L 02/23/2026 - 18:57:26: "rolling<88><[U:1:929381220]><Red>" triggered "pass_get" (firstcontact "0") (position "-62 7 -95")
+L 02/23/2026 - 18:57:27: "rolling<88><[U:1:929381220]><Red>" triggered "pass_free" (position "-153 64 -71")
+L 02/23/2026 - 18:57:27: "rolling<88><[U:1:929381220]><Red>" committed suicide with "world" (attacker_position "-148 88 -77")
+L 02/23/2026 - 18:57:27: "Jack The Sipper<86><[U:1:252636943]><Blue>" picked up item "tf_ammo_pack"
+L 02/23/2026 - 18:57:27: "rolling<88><[U:1:929381220]><Red>" spawned as "demoman"
+L 02/23/2026 - 18:57:27: "rolling<88><[U:1:929381220]><Red>" spawned with m_filter on
+L 02/23/2026 - 18:57:29: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 18:57:29: "rolling<88><[U:1:929381220]><Red>" killed "Jack The Sipper<86><[U:1:252636943]><Blue>" with "player" (attacker_position "213 1363 0") (victim_position "-11 625 0")
+L 02/23/2026 - 18:57:29: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 18:57:29: "rolling<88><[U:1:929381220]><Red>" triggered "pass_get" (firstcontact "0") (position "181 1281 117")
+L 02/23/2026 - 18:57:31: "rolling<88><[U:1:929381220]><Red>" triggered "pass_free" (position "-17 1022 594")
+L 02/23/2026 - 18:57:31: "rolling<88><[U:1:929381220]><Red>" charged as "demoman" with m_filter on
+L 02/23/2026 - 18:57:32: "rolling<88><[U:1:929381220]><Red>" triggered "pass_get" (firstcontact "0") (position "-531 404 175")
+L 02/23/2026 - 18:57:32: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 18:57:35: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 18:57:40: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 18:57:40: "rolling<88><[U:1:929381220]><Red>" triggered "pass_free" (position "123 -1293 43")
+L 02/23/2026 - 18:57:40: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_hit" (weapon "quake_rl")
+L 02/23/2026 - 18:57:40: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "damage" against "rolling<88><[U:1:929381220]><Red>" (damage "68") (weapon "quake_rl")
+L 02/23/2026 - 18:57:41: "rolling<88><[U:1:929381220]><Red>" triggered "pass_score" (points "1") (panacea "0") (win strat "0") (deathbomb "0") (dist "440") (position "171 -1472 76")
+L 02/23/2026 - 18:57:42: "rolling<88><[U:1:929381220]><Red>" triggered "damage" against "Jack The Sipper<86><[U:1:252636943]><Blue>" (damage "55") (weapon "ullapool_caber")
+L 02/23/2026 - 18:57:42: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "damage" against "rolling<88><[U:1:929381220]><Red>" (damage "65") (weapon "market_gardener")
+L 02/23/2026 - 18:57:42: "rolling<88><[U:1:929381220]><Red>" triggered "damage" against "Jack The Sipper<86><[U:1:252636943]><Blue>" (damage "27") (weapon "splendid_screen")
+L 02/23/2026 - 18:57:42: "rolling<88><[U:1:929381220]><Red>" charged as "demoman" with m_filter on
+L 02/23/2026 - 18:57:42: "Jack The Sipper<86><[U:1:252636943]><Blue>" killed "rolling<88><[U:1:929381220]><Red>" with "player" (attacker_position "146 -1457 0") (victim_position "194 -1483 0")
+L 02/23/2026 - 18:57:42: "Jack The Sipper<86><[U:1:252636943]><Blue>" picked up item "tf_ammo_pack"
+L 02/23/2026 - 18:57:42: "rolling<88><[U:1:929381220]><Red>" spawned as "demoman"
+L 02/23/2026 - 18:57:43: "rolling<88><[U:1:929381220]><Red>" spawned with m_filter on
+L 02/23/2026 - 18:57:44: "rolling<88><[U:1:929381220]><Red>" killed "Jack The Sipper<86><[U:1:252636943]><Blue>" with "player" (attacker_position "-297 1606 0") (victim_position "279 -1641 0")
+L 02/23/2026 - 18:57:44: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 18:57:45: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-320 -1739 0")
+L 02/23/2026 - 18:57:45: "rolling<88><[U:1:929381220]><Red>" charged as "demoman" with m_filter on
+L 02/23/2026 - 18:57:45: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 18:57:47: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "1") (position "319 -1439 118")
+L 02/23/2026 - 18:57:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" position_report (position "433 -1286 271")
+L 02/23/2026 - 18:57:48: "SourceTV<3><BOT><Spectator>" position_report (position "-345 -1960 68")
+L 02/23/2026 - 18:57:48: "rolling<88><[U:1:929381220]><Red>" position_report (position "363 -1354 69")
+L 02/23/2026 - 18:57:48: "rolling<88><[U:1:929381220]><Red>" committed suicide with "world" (attacker_position "367 -1357 43")
+L 02/23/2026 - 18:57:48: "rolling<88><[U:1:929381220]><Red>" spawned as "demoman"
+L 02/23/2026 - 18:57:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "579 -1143 329")
+L 02/23/2026 - 18:57:48: "rolling<88><[U:1:929381220]><Red>" spawned with m_filter on
+L 02/23/2026 - 18:57:51: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 18:57:51: "rolling<88><[U:1:929381220]><Red>" charged as "demoman" with m_filter on
+L 02/23/2026 - 18:57:54: "rolling<88><[U:1:929381220]><Red>" triggered "pass_get" (firstcontact "0") (position "-468 -1597 0")
+L 02/23/2026 - 18:57:56: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 18:57:57: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_hit" (weapon "quake_rl")
+L 02/23/2026 - 18:57:57: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "damage" against "rolling<88><[U:1:929381220]><Red>" (damage "103") (weapon "quake_rl") (crit "mini")
+L 02/23/2026 - 18:57:57: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 18:58:00: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 18:58:00: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_hit" (weapon "quake_rl")
+L 02/23/2026 - 18:58:00: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "damage" against "rolling<88><[U:1:929381220]><Red>" (damage "61") (weapon "quake_rl") (crit "mini")
+L 02/23/2026 - 18:58:01: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 18:58:01: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-12 -1326 0")
+L 02/23/2026 - 18:58:02: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 18:58:04: "rolling<88><[U:1:929381220]><Red>" triggered "pass_free" (position "23 212 -28")
+L 02/23/2026 - 18:58:04: "Jack The Sipper<86><[U:1:252636943]><Blue>" killed "rolling<88><[U:1:929381220]><Red>" with "player" (attacker_position "40 -814 112") (victim_position "9 251 -10")
+L 02/23/2026 - 18:58:04: "rolling<88><[U:1:929381220]><Red>" spawned as "demoman"
+L 02/23/2026 - 18:58:04: "rolling<88><[U:1:929381220]><Red>" spawned with m_filter on
+L 02/23/2026 - 18:58:05: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "18 -625 192")
+L 02/23/2026 - 18:58:05: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 18:58:05: "rolling<88><[U:1:929381220]><Red>" committed suicide with "world" (attacker_position "266 1803 0")
+L 02/23/2026 - 18:58:05: "rolling<88><[U:1:929381220]><Red>" spawned as "demoman"
+L 02/23/2026 - 18:58:05: "rolling<88><[U:1:929381220]><Red>" spawned with m_filter on
+L 02/23/2026 - 18:58:06: passtime_ball took damage victim '210' attacker '3' inflictor '3' damage '55.00' damagetype '134221952' inflictor classname 'player' 
+L 02/23/2026 - 18:58:06: passtime_ball took damage victim '210' attacker '3' inflictor '3' damage '69.99' damagetype '136314944' inflictor classname 'player' 
+L 02/23/2026 - 18:58:06: "rolling<88><[U:1:929381220]><Red>" triggered "pass_get" (firstcontact "0") (position "-293 1577 12")
+L 02/23/2026 - 18:58:08: "rolling<88><[U:1:929381220]><Red>" triggered "pass_free" (position "62 1410 593")
+L 02/23/2026 - 18:58:08: "rolling<88><[U:1:929381220]><Red>" charged as "demoman" with m_filter on
+L 02/23/2026 - 18:58:09: "rolling<88><[U:1:929381220]><Red>" triggered "pass_get" (firstcontact "0") (position "486 386 182")
+L 02/23/2026 - 18:58:10: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "damage" against "rolling<88><[U:1:929381220]><Red>" (damage "88") (weapon "market_gardener") (crit "mini")
+L 02/23/2026 - 18:58:10: "rolling<88><[U:1:929381220]><Red>" triggered "pass_free" (position "406 59 224")
+L 02/23/2026 - 18:58:10: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_ball_stolen" against "rolling<88><[U:1:929381220]><Red>" (steal defense "0") (thief_position "410 11 224") (victim_position "406 59 224")
+L 02/23/2026 - 18:58:12: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "345 401 274")
+L 02/23/2026 - 18:58:12: "rolling<88><[U:1:929381220]><Red>" triggered "damage" against "Jack The Sipper<86><[U:1:252636943]><Blue>" (damage "55") (weapon "ullapool_caber")
+L 02/23/2026 - 18:58:12: "Jack The Sipper<86><[U:1:252636943]><Blue>" killed "rolling<88><[U:1:929381220]><Red>" with "player" (attacker_position "266 526 366") (victim_position "251 405 100")
+L 02/23/2026 - 18:58:13: "rolling<88><[U:1:929381220]><Red>" spawned as "demoman"
+L 02/23/2026 - 18:58:13: "rolling<88><[U:1:929381220]><Red>" spawned with m_filter on
+L 02/23/2026 - 18:58:13: passtime_ball took damage victim '210' attacker '1' inflictor '216' damage '45.00' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 18:58:14: "rolling<88><[U:1:929381220]><Red>" killed "Jack The Sipper<86><[U:1:252636943]><Blue>" with "player" (attacker_position "218 1484 0") (victim_position "-91 973 198")
+L 02/23/2026 - 18:58:15: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 18:58:15: "rolling<88><[U:1:929381220]><Red>" charged as "demoman" with m_filter on
+L 02/23/2026 - 18:58:17: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "1 -1081 74")
+L 02/23/2026 - 18:58:18: "rolling<88><[U:1:929381220]><Red>" committed suicide with "world" (attacker_position "191 -1008 0")
+L 02/23/2026 - 18:58:18: "rolling<88><[U:1:929381220]><Red>" spawned as "demoman"
+L 02/23/2026 - 18:58:18: "rolling<88><[U:1:929381220]><Red>" spawned with m_filter on
+L 02/23/2026 - 18:58:18: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-95 -886 0")
+L 02/23/2026 - 18:58:19: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-83 -900 0")
+L 02/23/2026 - 18:58:20: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "48 -727 0")
+L 02/23/2026 - 18:58:21: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "166 -616 4")
+L 02/23/2026 - 18:58:22: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "664 -223 519")
+L 02/23/2026 - 18:58:23: passtime_ball took damage victim '210' attacker '1' inflictor '223' damage '60.69' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 18:58:23: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "616 194 311")
+L 02/23/2026 - 18:58:24: "rolling<88><[U:1:929381220]><Red>" charged as "demoman" with m_filter on
+L 02/23/2026 - 18:58:26: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "71 1137 47")
+L 02/23/2026 - 18:58:26: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_score" (points "1") (panacea "0") (win strat "0") (deathbomb "0") (dist "543") (position "17 1238 0")
+L 02/23/2026 - 18:58:27: "rolling<88><[U:1:929381220]><Red>" triggered "damage" against "Jack The Sipper<86><[U:1:252636943]><Blue>" (damage "55") (weapon "ullapool_caber")
+L 02/23/2026 - 18:58:27: "rolling<88><[U:1:929381220]><Red>" committed suicide with "world" (attacker_position "16 1239 0")
+L 02/23/2026 - 18:58:27: "rolling<88><[U:1:929381220]><Red>" spawned as "demoman"
+L 02/23/2026 - 18:58:27: "rolling<88><[U:1:929381220]><Red>" killed "Jack The Sipper<86><[U:1:252636943]><Blue>" with "player" (attacker_position "415 1896 0") (victim_position "-105 1223 0")
+L 02/23/2026 - 18:58:27: "rolling<88><[U:1:929381220]><Red>" spawned with m_filter on
+L 02/23/2026 - 18:58:27: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 18:58:32: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 18:58:36: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "1") (position "-374 1378 0")
+L 02/23/2026 - 18:58:38: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-235 1260 0")
+L 02/23/2026 - 18:58:40: passtime_ball took damage victim '210' attacker '1' inflictor '129' damage '56.56' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 18:58:41: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-319 1697 623")
+L 02/23/2026 - 18:58:41: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-548 1789 654")
+L 02/23/2026 - 18:58:42: passtime_ball took damage victim '210' attacker '1' inflictor '156' damage '60.99' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 18:58:42: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-759 1805 766")
+L 02/23/2026 - 18:58:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" position_report (position "5 1650 524")
+L 02/23/2026 - 18:58:48: "SourceTV<3><BOT><Spectator>" position_report (position "-345 -1960 68")
+L 02/23/2026 - 18:58:48: "rolling<88><[U:1:929381220]><Red>" position_report (position "415 1896 0")
+L 02/23/2026 - 18:58:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "5 1650 524")
+L 02/23/2026 - 18:58:49: passtime_ball took damage victim '210' attacker '1' inflictor '129' damage '72.62' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 18:58:50: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "22 1855 1037")
+L 02/23/2026 - 18:58:59: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "35 1669 529")
+L 02/23/2026 - 18:59:01: passtime_ball took damage victim '210' attacker '1' inflictor '156' damage '86.85' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 18:59:01: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "38 1671 562")
+L 02/23/2026 - 18:59:01: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 18:59:02: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "23 1627 524")
+L 02/23/2026 - 18:59:04: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "25 1630 524")
+L 02/23/2026 - 18:59:06: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "46 1643 863")
+L 02/23/2026 - 18:59:08: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "55 1648 524")
+L 02/23/2026 - 18:59:10: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "55 1648 524")
+L 02/23/2026 - 18:59:11: passtime_ball took damage victim '210' attacker '1' inflictor '156' damage '73.69' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 18:59:11: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "55 1642 543")
+L 02/23/2026 - 18:59:13: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "64 1681 1012")
+L 02/23/2026 - 18:59:14: passtime_ball took damage victim '210' attacker '1' inflictor '208' damage '78.50' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 18:59:14: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "58 1648 787")
+L 02/23/2026 - 18:59:15: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "61 1625 864")
+L 02/23/2026 - 18:59:16: passtime_ball took damage victim '210' attacker '1' inflictor '208' damage '62.78' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 18:59:16: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "62 1637 561")
+L 02/23/2026 - 18:59:17: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "63 1654 838")
+L 02/23/2026 - 18:59:18: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "64 1662 532")
+L 02/23/2026 - 18:59:20: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "66 1711 1036")
+L 02/23/2026 - 18:59:21: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "67 1654 524")
+L 02/23/2026 - 18:59:22: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "70 1635 524")
+L 02/23/2026 - 18:59:23: passtime_ball took damage victim '210' attacker '1' inflictor '129' damage '73.41' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 18:59:23: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "31 1625 532")
+L 02/23/2026 - 18:59:25: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "2 1673 1023")
+L 02/23/2026 - 18:59:26: passtime_ball took damage victim '210' attacker '1' inflictor '208' damage '70.80' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 18:59:26: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "10 1635 594")
+L 02/23/2026 - 18:59:27: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "8 1611 864")
+L 02/23/2026 - 18:59:28: passtime_ball took damage victim '210' attacker '1' inflictor '213' damage '76.50' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 18:59:28: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "15 1625 591")
+L 02/23/2026 - 18:59:30: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-6 1615 958")
+L 02/23/2026 - 18:59:31: passtime_ball took damage victim '210' attacker '1' inflictor '156' damage '80.02' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 18:59:31: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-7 1637 549")
+L 02/23/2026 - 18:59:33: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-4 1656 988")
+L 02/23/2026 - 18:59:33: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-2 1666 532")
+L 02/23/2026 - 18:59:34: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "13 1670 530")
+L 02/23/2026 - 18:59:36: passtime_ball took damage victim '210' attacker '1' inflictor '156' damage '61.86' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 18:59:36: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "23 1658 572")
+L 02/23/2026 - 18:59:38: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "18 1711 987")
+L 02/23/2026 - 18:59:39: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "37 1640 524")
+L 02/23/2026 - 18:59:41: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "274 1725 588")
+L 02/23/2026 - 18:59:42: passtime_ball took damage victim '210' attacker '1' inflictor '156' damage '69.59' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 18:59:42: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "606 1637 686")
+L 02/23/2026 - 18:59:45: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "113 1333 0")
+L 02/23/2026 - 18:59:46: passtime_ball took damage victim '210' attacker '1' inflictor '129' damage '71.03' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 18:59:46: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "48 1310 25")
+L 02/23/2026 - 18:59:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" position_report (position "0 1627 524")
+L 02/23/2026 - 18:59:48: "SourceTV<3><BOT><Spectator>" position_report (position "-345 -1960 68")
+L 02/23/2026 - 18:59:48: "rolling<88><[U:1:929381220]><Red>" position_report (position "415 1896 0")
+L 02/23/2026 - 18:59:54: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "693 1189 370")
+L 02/23/2026 - 18:59:57: passtime_ball took damage victim '210' attacker '1' inflictor '126' damage '75.82' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 18:59:57: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "632 1125 347")
+L 02/23/2026 - 18:59:59: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "292 1367 0")
+L 02/23/2026 - 19:00:00: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "539 1350 0")
+L 02/23/2026 - 19:00:01: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "504 1451 0")
+L 02/23/2026 - 19:00:02: passtime_ball took damage victim '210' attacker '1' inflictor '126' damage '79.20' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:00:02: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "422 1437 12")
+L 02/23/2026 - 19:00:04: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-366 1728 591")
+L 02/23/2026 - 19:00:05: passtime_ball took damage victim '210' attacker '1' inflictor '129' damage '87.70' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:00:05: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-782 1789 787")
+L 02/23/2026 - 19:00:09: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "66 1633 524")
+L 02/23/2026 - 19:00:14: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:00:15: passtime_ball took damage victim '210' attacker '1' inflictor '156' damage '68.54' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:00:15: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "75 711 0")
+L 02/23/2026 - 19:00:16: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "166 645 0")
+L 02/23/2026 - 19:00:17: passtime_ball took damage victim '210' attacker '1' inflictor '208' damage '61.49' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:00:17: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "212 629 60")
+L 02/23/2026 - 19:00:18: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "583 999 501")
+L 02/23/2026 - 19:00:18: passtime_ball took damage victim '210' attacker '1' inflictor '129' damage '57.78' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:00:18: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "678 1351 368")
+L 02/23/2026 - 19:00:22: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-4 1365 0")
+L 02/23/2026 - 19:00:24: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "22 1373 0")
+L 02/23/2026 - 19:00:29: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "7 941 0")
+L 02/23/2026 - 19:00:32: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "4 1062 0")
+L 02/23/2026 - 19:00:33: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-0 949 45")
+L 02/23/2026 - 19:00:35: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:00:38: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-2 1041 0")
+L 02/23/2026 - 19:00:39: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "2 965 0")
+L 02/23/2026 - 19:00:40: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:00:43: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-22 933 0")
+L 02/23/2026 - 19:00:45: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "3 932 0")
+L 02/23/2026 - 19:00:46: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_score" (points "1") (panacea "0") (win strat "0") (deathbomb "0") (dist "696") (position "3 987 0")
+L 02/23/2026 - 19:00:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" position_report (position "251 985 62")
+L 02/23/2026 - 19:00:48: "SourceTV<3><BOT><Spectator>" position_report (position "-345 -1960 68")
+L 02/23/2026 - 19:00:48: "rolling<88><[U:1:929381220]><Red>" position_report (position "415 1896 0")
+L 02/23/2026 - 19:00:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "495 1101 252")
+L 02/23/2026 - 19:00:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:00:54: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "1") (position "128 1418 0")
+L 02/23/2026 - 19:00:55: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "368 1480 0")
+L 02/23/2026 - 19:00:56: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "397 1500 0")
+L 02/23/2026 - 19:00:56: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "red_catapult2" with the jack (position "397 1500 14")
+L 02/23/2026 - 19:00:56: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:00:59: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:00:59: passtime_ball took damage victim '210' attacker '1' inflictor '156' damage '66.79' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:01:00: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-692 987 369")
+L 02/23/2026 - 19:01:00: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:01:02: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-84 -1409 0")
+L 02/23/2026 - 19:01:03: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-174 -1493 0")
+L 02/23/2026 - 19:01:03: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-188 -1497 0")
+L 02/23/2026 - 19:01:03: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:01:03: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "blu_catapult2" with the jack (position "-293 -1880 0")
+L 02/23/2026 - 19:01:07: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "635 -15 310")
+L 02/23/2026 - 19:01:08: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "696 840 373")
+L 02/23/2026 - 19:01:11: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "257 1367 0")
+L 02/23/2026 - 19:01:12: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "135 1314 50")
+L 02/23/2026 - 19:01:12: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "126 1310 47")
+L 02/23/2026 - 19:01:12: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:01:16: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-326 -246 473")
+L 02/23/2026 - 19:01:16: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:01:19: passtime_ball took damage victim '210' attacker '1' inflictor '208' damage '58.75' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:01:19: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "234 -653 27")
+L 02/23/2026 - 19:01:20: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "258 -36 249")
+L 02/23/2026 - 19:01:20: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "167 653 50")
+L 02/23/2026 - 19:01:21: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-54 1403 131")
+L 02/23/2026 - 19:01:21: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_score" (points "1") (panacea "0") (win strat "0") (deathbomb "0") (dist "243") (position "-57 1502 121")
+L 02/23/2026 - 19:01:22: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-45 1495 28")
+L 02/23/2026 - 19:01:22: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:01:27: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:01:29: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "1") (position "-340 1345 0")
+L 02/23/2026 - 19:01:29: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-287 1350 0")
+L 02/23/2026 - 19:01:31: passtime_ball took damage victim '210' attacker '1' inflictor '126' damage '71.71' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:01:32: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-237 1223 510")
+L 02/23/2026 - 19:01:36: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-185 934 96")
+L 02/23/2026 - 19:01:40: passtime_ball took damage victim '210' attacker '1' inflictor '156' damage '64.94' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:01:40: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-302 1434 346")
+L 02/23/2026 - 19:01:42: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-381 1638 0")
+L 02/23/2026 - 19:01:43: passtime_ball took damage victim '210' attacker '1' inflictor '156' damage '78.15' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:01:44: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-261 1457 414")
+L 02/23/2026 - 19:01:45: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-46 1498 183")
+L 02/23/2026 - 19:01:45: "Jack The Sipper<86><[U:1:252636943]><Blue>" picked up item "tf_ammo_pack"
+L 02/23/2026 - 19:01:47: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "53 1386 0")
+L 02/23/2026 - 19:01:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" position_report (position "32 1386 0")
+L 02/23/2026 - 19:01:48: "SourceTV<3><BOT><Spectator>" position_report (position "-345 -1960 68")
+L 02/23/2026 - 19:01:48: "rolling<88><[U:1:929381220]><Red>" position_report (position "415 1896 0")
+L 02/23/2026 - 19:01:50: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "32 1386 0")
+L 02/23/2026 - 19:01:53: passtime_ball took damage victim '210' attacker '1' inflictor '213' damage '67.96' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:01:53: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "6 1473 328")
+L 02/23/2026 - 19:01:53: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "6 1477 336")
+L 02/23/2026 - 19:01:53: World triggered "Round_Win" (winner "Blue")
+L 02/23/2026 - 19:01:53: World triggered "Round_Length" (seconds "305.79")
+L 02/23/2026 - 19:01:53: Team "Red" current score "0" with "1" players
+L 02/23/2026 - 19:01:53: Team "Blue" current score "1" with "1" players
+L 02/23/2026 - 19:01:53: Printing for client: 1
+L 02/23/2026 - 19:01:53: Printing for client: 3
+L 02/23/2026 - 19:02:03: World triggered "Round_Start"
+L 02/23/2026 - 19:02:03: World triggered "Round_Setup_Begin"
+L 02/23/2026 - 19:02:03: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:02:03: "rolling<88><[U:1:929381220]><Red>" spawned as "demoman"
+L 02/23/2026 - 19:02:03: "rolling<88><[U:1:929381220]><Red>" spawned with m_filter on
+L 02/23/2026 - 19:02:08: World triggered "Round_Setup_End"
+L 02/23/2026 - 19:02:12: passtime_ball took damage victim '208' attacker '1' inflictor '217' damage '55.45' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:02:12: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "1") (position "-62 -38 733")
+L 02/23/2026 - 19:02:13: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "594 350 830")
+L 02/23/2026 - 19:02:14: passtime_ball took damage victim '208' attacker '1' inflictor '217' damage '81.05' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:02:14: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "685 819 374")
+L 02/23/2026 - 19:02:17: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-13 1354 4")
+L 02/23/2026 - 19:02:19: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-13 1354 0")
+L 02/23/2026 - 19:02:21: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-13 1354 49")
+L 02/23/2026 - 19:02:23: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-13 1354 0")
+L 02/23/2026 - 19:02:24: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-13 1354 0")
+L 02/23/2026 - 19:02:26: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "55 1362 0")
+L 02/23/2026 - 19:02:29: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-11 1356 0")
+L 02/23/2026 - 19:02:29: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_score" (points "1") (panacea "0") (win strat "0") (deathbomb "0") (dist "347") (position "-11 1356 0")
+L 02/23/2026 - 19:02:31: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-53 1449 0")
+L 02/23/2026 - 19:02:31: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:02:36: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:02:36: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-325 1363 98")
+L 02/23/2026 - 19:02:36: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:02:41: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "1") (position "-376 1323 112")
+L 02/23/2026 - 19:02:43: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-49 1272 0")
+L 02/23/2026 - 19:02:46: passtime_ball took damage victim '208' attacker '1' inflictor '126' damage '90.00' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:02:46: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:02:47: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "66 848 235")
+L 02/23/2026 - 19:02:47: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:02:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" position_report (position "-339 -1729 0")
+L 02/23/2026 - 19:02:48: "SourceTV<3><BOT><Spectator>" position_report (position "-345 -1960 68")
+L 02/23/2026 - 19:02:48: "rolling<88><[U:1:929381220]><Red>" position_report (position "-352 1896 0")
+L 02/23/2026 - 19:02:51: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "314 -676 7")
+L 02/23/2026 - 19:02:53: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "236 -420 25")
+L 02/23/2026 - 19:02:53: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "236 -421 25")
+L 02/23/2026 - 19:02:53: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:02:56: passtime_ball took damage victim '208' attacker '1' inflictor '156' damage '45.00' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:02:56: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "59 -842 24")
+L 02/23/2026 - 19:02:57: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "78 -504 0")
+L 02/23/2026 - 19:02:58: passtime_ball took damage victim '208' attacker '1' inflictor '156' damage '60.56' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:02:59: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "307 -126 482")
+L 02/23/2026 - 19:03:00: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "475 129 224")
+L 02/23/2026 - 19:03:02: passtime_ball took damage victim '208' attacker '1' inflictor '156' damage '79.16' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:03:02: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "565 65 266")
+L 02/23/2026 - 19:03:04: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "303 618 532")
+L 02/23/2026 - 19:03:06: passtime_ball took damage victim '208' attacker '1' inflictor '35' damage '47.22' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:03:06: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-401 1429 70")
+L 02/23/2026 - 19:03:08: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-606 430 280")
+L 02/23/2026 - 19:03:09: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-583 325 256")
+L 02/23/2026 - 19:03:09: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:03:12: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-208 -1294 96")
+L 02/23/2026 - 19:03:12: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-555 -957 422")
+L 02/23/2026 - 19:03:13: passtime_ball took damage victim '208' attacker '1' inflictor '126' damage '46.93' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:03:13: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-676 -576 374")
+L 02/23/2026 - 19:03:14: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-228 -222 582")
+L 02/23/2026 - 19:03:15: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:03:15: passtime_ball took damage victim '208' attacker '1' inflictor '126' damage '64.40' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:03:15: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "274 102 80")
+L 02/23/2026 - 19:03:16: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "269 -15 126")
+L 02/23/2026 - 19:03:16: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "271 -26 129")
+L 02/23/2026 - 19:03:17: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:03:18: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "381 -1514 12")
+L 02/23/2026 - 19:03:19: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "647 -1091 422")
+L 02/23/2026 - 19:03:20: passtime_ball took damage victim '208' attacker '1' inflictor '213' damage '53.70' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:03:20: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "660 -669 363")
+L 02/23/2026 - 19:03:21: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "200 -215 391")
+L 02/23/2026 - 19:03:21: passtime_ball took damage victim '208' attacker '1' inflictor '213' damage '62.99' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:03:21: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-319 125 84")
+L 02/23/2026 - 19:03:22: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-289 1041 37")
+L 02/23/2026 - 19:03:24: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:03:25: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:03:26: passtime_ball took damage victim '208' attacker '1' inflictor '129' damage '69.39' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:03:26: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "464 981 0")
+L 02/23/2026 - 19:03:27: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "525 1106 48")
+L 02/23/2026 - 19:03:27: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "528 1121 50")
+L 02/23/2026 - 19:03:27: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:03:27: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "red_catapult2" with the jack (position "-411 -1829 0")
+L 02/23/2026 - 19:03:30: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-687 40 364")
+L 02/23/2026 - 19:03:31: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-869 916 938")
+L 02/23/2026 - 19:03:32: passtime_ball took damage victim '208' attacker '1' inflictor '126' damage '75.10' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:03:32: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-1027 1486 997")
+L 02/23/2026 - 19:03:34: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "50 1769 667")
+L 02/23/2026 - 19:03:34: passtime_ball took damage victim '208' attacker '1' inflictor '217' damage '64.99' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:03:39: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:03:39: passtime_ball took damage victim '208' attacker '1' inflictor '225' damage '71.49' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:03:39: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-81 643 0")
+L 02/23/2026 - 19:03:40: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-167 758 48")
+L 02/23/2026 - 19:03:40: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-183 786 33")
+L 02/23/2026 - 19:03:40: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:03:42: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "red_catapult1" with the jack (position "537 -1329 191")
+L 02/23/2026 - 19:03:44: passtime_ball took damage victim '208' attacker '1' inflictor '216' damage '53.16' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:03:44: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "515 270 294")
+L 02/23/2026 - 19:03:44: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "740 868 419")
+L 02/23/2026 - 19:03:47: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "38 1162 0")
+L 02/23/2026 - 19:03:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" position_report (position "54 1401 343")
+L 02/23/2026 - 19:03:48: "SourceTV<3><BOT><Spectator>" position_report (position "-345 -1960 68")
+L 02/23/2026 - 19:03:48: "rolling<88><[U:1:929381220]><Red>" position_report (position "-352 1896 0")
+L 02/23/2026 - 19:03:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "41 1433 369")
+L 02/23/2026 - 19:03:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "15 1499 387")
+L 02/23/2026 - 19:03:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_score" (points "1") (panacea "0") (win strat "0") (deathbomb "0") (dist "187") (position "15 1499 401")
+L 02/23/2026 - 19:03:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:03:51: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-547 -556 127")
+L 02/23/2026 - 19:03:51: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:03:54: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:03:56: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "1") (position "-376 1358 104")
+L 02/23/2026 - 19:03:57: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-262 1433 0")
+L 02/23/2026 - 19:03:57: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-282 1433 0")
+L 02/23/2026 - 19:03:57: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:03:58: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "red_catapult1" with the jack (position "279 -1883 0")
+L 02/23/2026 - 19:04:00: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "533 -715 54")
+L 02/23/2026 - 19:04:00: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:04:03: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "166 -326 30")
+L 02/23/2026 - 19:04:06: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "277 763 50")
+L 02/23/2026 - 19:04:07: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "293 810 31")
+L 02/23/2026 - 19:04:07: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:04:08: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "red_catapult2" with the jack (position "336 -1588 54")
+L 02/23/2026 - 19:04:09: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-476 -901 5")
+L 02/23/2026 - 19:04:09: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:04:14: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:04:15: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:04:15: passtime_ball took damage victim '208' attacker '1' inflictor '156' damage '66.77' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:04:16: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "83 -185 -39")
+L 02/23/2026 - 19:04:17: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "213 359 445")
+L 02/23/2026 - 19:04:17: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "224 431 375")
+L 02/23/2026 - 19:04:18: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:04:19: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "red_catapult2" with the jack (position "327 -1540 71")
+L 02/23/2026 - 19:04:21: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-676 96 418")
+L 02/23/2026 - 19:04:22: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-742 605 522")
+L 02/23/2026 - 19:04:23: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "red_catapult1" with the jack (position "-534 1527 256")
+L 02/23/2026 - 19:04:25: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-198 1477 0")
+L 02/23/2026 - 19:04:25: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:04:28: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "440 -235 259")
+L 02/23/2026 - 19:04:29: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "732 432 777")
+L 02/23/2026 - 19:04:29: passtime_ball took damage victim '208' attacker '1' inflictor '35' damage '73.77' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:04:29: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "1016 926 972")
+L 02/23/2026 - 19:04:31: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-45 1685 1242")
+L 02/23/2026 - 19:04:32: passtime_ball took damage victim '208' attacker '1' inflictor '129' damage '63.14' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:04:37: passtime_ball took damage victim '208' attacker '1' inflictor '213' damage '66.30' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:04:37: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "86 100 -52")
+L 02/23/2026 - 19:04:38: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "299 92 80")
+L 02/23/2026 - 19:04:38: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "308 84 80")
+L 02/23/2026 - 19:04:38: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:04:40: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "510 -1233 17")
+L 02/23/2026 - 19:04:41: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "347 -1171 0")
+L 02/23/2026 - 19:04:41: passtime_ball took damage victim '208' attacker '1' inflictor '212' damage '65.94' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:04:41: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "374 -1150 15")
+L 02/23/2026 - 19:04:42: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "657 -703 482")
+L 02/23/2026 - 19:04:43: passtime_ball took damage victim '208' attacker '1' inflictor '35' damage '55.24' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:04:43: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "673 -296 362")
+L 02/23/2026 - 19:04:44: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "191 125 448")
+L 02/23/2026 - 19:04:45: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-278 498 44")
+L 02/23/2026 - 19:04:46: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-14 1268 145")
+L 02/23/2026 - 19:04:46: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-17 1503 49")
+L 02/23/2026 - 19:04:46: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_score" (points "1") (panacea "0") (win strat "0") (deathbomb "0") (dist "353") (position "-17 1503 49")
+L 02/23/2026 - 19:04:46: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:04:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" position_report (position "-512 -1273 235")
+L 02/23/2026 - 19:04:48: "SourceTV<3><BOT><Spectator>" position_report (position "-345 -1960 68")
+L 02/23/2026 - 19:04:48: "rolling<88><[U:1:929381220]><Red>" position_report (position "-352 1896 0")
+L 02/23/2026 - 19:04:49: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:04:53: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "1") (position "-285 1362 217")
+L 02/23/2026 - 19:04:54: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-296 1380 0")
+L 02/23/2026 - 19:04:54: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-334 1421 0")
+L 02/23/2026 - 19:04:54: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "red_catapult1" with the jack (position "-334 1421 14")
+L 02/23/2026 - 19:04:54: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:04:58: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "633 -40 379")
+L 02/23/2026 - 19:04:58: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "726 433 748")
+L 02/23/2026 - 19:05:00: passtime_ball took damage victim '208' attacker '1' inflictor '219' damage '83.18' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:05:00: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "701 1696 558")
+L 02/23/2026 - 19:05:02: "Jack The Sipper<86><[U:1:252636943]><Blue>" picked up item "tf_ammo_pack"
+L 02/23/2026 - 19:05:03: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-125 1448 0")
+L 02/23/2026 - 19:05:03: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-145 1455 0")
+L 02/23/2026 - 19:05:03: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:05:03: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "red_catapult1" with the jack (position "269 -1851 0")
+L 02/23/2026 - 19:05:08: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:05:08: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "423 759 229")
+L 02/23/2026 - 19:05:09: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:05:12: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-47 44 -80")
+L 02/23/2026 - 19:05:13: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "38 440 101")
+L 02/23/2026 - 19:05:14: passtime_ball took damage victim '208' attacker '1' inflictor '126' damage '62.88' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:05:14: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "186 685 20")
+L 02/23/2026 - 19:05:14: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "256 1020 398")
+L 02/23/2026 - 19:05:14: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "274 1056 398")
+L 02/23/2026 - 19:05:15: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:05:15: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "red_catapult2" with the jack (position "371 -1807 0")
+L 02/23/2026 - 19:05:19: passtime_ball took damage victim '208' attacker '1' inflictor '156' damage '60.94' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:05:19: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-556 -136 258")
+L 02/23/2026 - 19:05:20: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-825 59 842")
+L 02/23/2026 - 19:05:23: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-393 804 45")
+L 02/23/2026 - 19:05:23: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:05:23: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:05:23: passtime_ball took damage victim '208' attacker '1' inflictor '126' damage '68.77' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:05:27: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-327 590 52")
+L 02/23/2026 - 19:05:28: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-233 635 0")
+L 02/23/2026 - 19:05:29: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "67 476 12")
+L 02/23/2026 - 19:05:30: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "532 558 478")
+L 02/23/2026 - 19:05:31: passtime_ball took damage victim '208' attacker '1' inflictor '126' damage '47.54' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:05:31: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "697 904 419")
+L 02/23/2026 - 19:05:32: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "206 1094 563")
+L 02/23/2026 - 19:05:33: passtime_ball took damage victim '208' attacker '1' inflictor '126' damage '61.55' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:05:33: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:05:33: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-358 1235 42")
+L 02/23/2026 - 19:05:33: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-93 1463 94")
+L 02/23/2026 - 19:05:34: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_score" (points "1") (panacea "0") (win strat "0") (deathbomb "0") (dist "244") (position "21 1503 42")
+L 02/23/2026 - 19:05:34: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "95 1503 0")
+L 02/23/2026 - 19:05:34: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:05:39: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:05:41: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "1") (position "-303 1419 48")
+L 02/23/2026 - 19:05:42: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-226 1431 0")
+L 02/23/2026 - 19:05:44: passtime_ball took damage victim '208' attacker '1' inflictor '1' damage '65.00' damagetype '134221952' inflictor classname 'player' 
+L 02/23/2026 - 19:05:44: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-223 1430 49")
+L 02/23/2026 - 19:05:47: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-10 1302 0")
+L 02/23/2026 - 19:05:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-31 1316 0")
+L 02/23/2026 - 19:05:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:05:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" position_report (position "411 -1893 0")
+L 02/23/2026 - 19:05:48: "SourceTV<3><BOT><Spectator>" position_report (position "-345 -1960 68")
+L 02/23/2026 - 19:05:48: "rolling<88><[U:1:929381220]><Red>" position_report (position "-352 1896 0")
+L 02/23/2026 - 19:05:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "red_catapult1" with the jack (position "381 -1800 0")
+L 02/23/2026 - 19:05:53: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "356 1327 82")
+L 02/23/2026 - 19:05:55: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "219 1453 2")
+L 02/23/2026 - 19:05:55: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "237 1462 0")
+L 02/23/2026 - 19:05:55: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:05:55: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "red_catapult2" with the jack (position "-403 -1874 0")
+L 02/23/2026 - 19:05:58: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-684 -15 362")
+L 02/23/2026 - 19:06:00: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-856 1150 1128")
+L 02/23/2026 - 19:06:01: passtime_ball took damage victim '208' attacker '1' inflictor '212' damage '52.02' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:06:01: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-833 1765 923")
+L 02/23/2026 - 19:06:04: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-247 1606 0")
+L 02/23/2026 - 19:06:04: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "red_catapult1" with the jack (position "-295 1604 0")
+L 02/23/2026 - 19:06:05: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-301 1590 0")
+L 02/23/2026 - 19:06:05: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:06:08: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "519 -155 224")
+L 02/23/2026 - 19:06:09: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "490 -106 224")
+L 02/23/2026 - 19:06:11: passtime_ball took damage victim '208' attacker '1' inflictor '219' damage '76.92' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:06:11: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "495 -42 239")
+L 02/23/2026 - 19:06:14: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "796 1065 744")
+L 02/23/2026 - 19:06:15: passtime_ball took damage victim '208' attacker '1' inflictor '219' damage '64.39' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:06:16: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-33 1699 561")
+L 02/23/2026 - 19:06:18: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-216 1683 544")
+L 02/23/2026 - 19:06:18: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-229 1683 544")
+L 02/23/2026 - 19:06:18: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:06:18: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "red_catapult1" with the jack (position "-293 -1859 0")
+L 02/23/2026 - 19:06:20: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-85 -1430 34")
+L 02/23/2026 - 19:06:20: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:06:24: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "302 -520 19")
+L 02/23/2026 - 19:06:24: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:06:24: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:06:25: passtime_ball took damage victim '208' attacker '1' inflictor '216' damage '47.58' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:06:28: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-149 -264 1")
+L 02/23/2026 - 19:06:31: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-35 674 46")
+L 02/23/2026 - 19:06:31: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "-28 686 49")
+L 02/23/2026 - 19:06:31: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:06:33: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "red_catapult2" with the jack (position "-92 -1179 94")
+L 02/23/2026 - 19:06:35: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-534 252 252")
+L 02/23/2026 - 19:06:35: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-664 840 387")
+L 02/23/2026 - 19:06:36: passtime_ball took damage victim '208' attacker '1' inflictor '216' damage '65.95' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:06:36: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-692 1457 419")
+L 02/23/2026 - 19:06:37: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "94 1816 682")
+L 02/23/2026 - 19:06:40: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "150 1277 31")
+L 02/23/2026 - 19:06:41: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "55 1289 51")
+L 02/23/2026 - 19:06:41: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "37 1301 50")
+L 02/23/2026 - 19:06:41: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:06:42: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "red_catapult1" with the jack (position "-323 -1788 0")
+L 02/23/2026 - 19:06:46: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "545 -131 260")
+L 02/23/2026 - 19:06:47: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "551 1390 158")
+L 02/23/2026 - 19:06:47: "Jack The Sipper<86><[U:1:252636943]><Blue>" committed suicide with "world" (attacker_position "551 1462 130")
+L 02/23/2026 - 19:06:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "red_catapult2" with the jack (position "551 1462 198")
+L 02/23/2026 - 19:06:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" spawned as "soldier"
+L 02/23/2026 - 19:06:48: "Jack The Sipper<86><[U:1:252636943]><Blue>" position_report (position "305 -1872 0")
+L 02/23/2026 - 19:06:48: "SourceTV<3><BOT><Spectator>" position_report (position "-345 -1960 68")
+L 02/23/2026 - 19:06:48: "rolling<88><[U:1:929381220]><Red>" position_report (position "-352 1896 0")
+L 02/23/2026 - 19:06:51: passtime_ball took damage victim '208' attacker '1' inflictor '220' damage '65.88' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:06:51: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-624 8 298")
+L 02/23/2026 - 19:06:52: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-745 763 726")
+L 02/23/2026 - 19:06:52: passtime_ball took damage victim '208' attacker '1' inflictor '216' damage '57.86' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:06:57: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:06:58: passtime_ball took damage victim '208' attacker '1' inflictor '219' damage '67.99' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:06:58: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-471 1132 60")
+L 02/23/2026 - 19:07:00: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "-310 670 416")
+L 02/23/2026 - 19:07:03: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "shot_fired" (weapon "quake_rl")
+L 02/23/2026 - 19:07:03: passtime_ball took damage victim '208' attacker '1' inflictor '220' damage '56.84' damagetype '2359360' inflictor classname 'tf_projectile_rocket' 
+L 02/23/2026 - 19:07:04: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_get" (firstcontact "0") (position "-41 -608 0")
+L 02/23/2026 - 19:07:08: "Jack The Sipper<86><[U:1:252636943]><Blue>" triggered "pass_free" (position "166 -1450 0")
+L 02/23/2026 - 19:07:08: World triggered "Round_Win" (winner "Blue")
+L 02/23/2026 - 19:07:08: World triggered "Round_Length" (seconds "305.06")
+L 02/23/2026 - 19:07:08: Team "Red" current score "0" with "1" players
+L 02/23/2026 - 19:07:08: Team "Blue" current score "2" with "1" players
+L 02/23/2026 - 19:07:08: Printing for client: 1
+L 02/23/2026 - 19:07:08: Printing for client: 3
+L 02/23/2026 - 19:07:18: World triggered "Game_Over" reason "Reached Win Limit"
+L 02/23/2026 - 19:07:18: Team "Red" final score "0" with "1" players
+L 02/23/2026 - 19:07:18: Team "Blue" final score "2" with "1" players
+L 02/23/2026 - 19:07:18: Team "BLUE" triggered "Intermission_Win_Limit"
