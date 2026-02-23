@@ -2,10 +2,13 @@ import type { RawTfLogEvent } from "./types.js";
 import { parse } from "./generated/tf2-parser.js";
 
 export function parseLog(rawText: string): RawTfLogEvent[] {
-  const lines = rawText.split("\n").filter((line) => line.length > 0);
+  const lines = rawText.split("\n");
   const events: RawTfLogEvent[] = [];
+
   for (let i = 0; i < lines.length; i++) {
-    const line = lines[i] as string;
+    const line = lines[i];
+    if (!line || line.length === 0) continue;
+
     try {
       const event = parse(line) as RawTfLogEvent;
       event.lineNumber = i + 1;
@@ -19,6 +22,7 @@ export function parseLog(rawText: string): RawTfLogEvent[] {
       });
     }
   }
+
   return events;
 }
 
